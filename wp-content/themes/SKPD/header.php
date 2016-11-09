@@ -24,6 +24,8 @@
 </head>
 
 <body <?php body_class(); ?>>
+  
+
 
   <div class="main-menu">
     <div class="ui grid container">
@@ -33,9 +35,20 @@
             <img class="ui centered golo image" src="<?php echo get_template_directory_uri().'/img/dki.png'; ?>" alt="">
           </div>
           <div class="right menu">
-            <a class="active item prime">Home</a>
-            <a class="item prime">Profil</a>
-            <a class="item prime">Program</a>
+            <?php 
+              wp_nav_menu(array(
+                'menu'              => 'primary',
+                'theme_location'    => 'primary',
+                'depth'             => 3,
+                'container'         => '',
+                'container_id'      => '',
+                'container_class'   => '',
+                'menu_class'        => '',
+                'fallback_cb'       => '',
+                'items_wrap'        => '%3$s',
+                'walker'            => new walkah()
+              ));
+            ?>
             <a class="item prime">Berita</a>
             <div class="ui dropdown item prime" tabindex="0">
               Dropdown

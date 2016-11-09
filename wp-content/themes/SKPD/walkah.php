@@ -7,12 +7,12 @@ class Walkah extends Walker_Nav_Menu {
 
    public function start_lvl( &$output, $depth = 0, $args = array() ) {
       $indent = str_repeat("\t", $depth);
-      $output .= "\n$indent<ul class=\"menu\">";
+      $output .= "\n$indent<div class=\"menu\">";
    }
 
    public function end_lvl( &$output, $depth = 0, $args = array() ) {
       $indent = str_repeat("\t", $depth);
-      $output .= "$indent</ul>\n";
+      $output .= "$indent</div>\n";
    }
 
    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -28,12 +28,12 @@ class Walkah extends Walker_Nav_Menu {
 	   $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';*/
 
 	   /*$output .= $indent . '<li' . $id . $class_names .'>';*/
-	   if ( $args->walker->has_children ){
-	   		$output .= $indent . '<li class="ui dropdown item">';
+	    if ( $args->walker->has_children ){
+	   		$output .= $indent . '<div class="ui dropdown item">';
 	   	}
 	   	else
 	   	{
-	   		$output .= $indent . '<li class="item">';
+	   		/*$output .= $indent . '<a class="item prime">';*/
 	   	}
 
 	   $atts = array();
@@ -62,7 +62,7 @@ class Walkah extends Walker_Nav_Menu {
 	   {
 
 		   $item_output = $args->before;
-		   $item_output .= '<a'. $attributes .'>';
+		   $item_output .= '<a  class="item prime"'. $attributes .'>';
 		   $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		   $item_output .= '</a>' . $icon;
 		   $item_output .= $args->after;
@@ -73,7 +73,15 @@ class Walkah extends Walker_Nav_Menu {
    }
 
    public function end_el( &$output, $item, $depth = 0, $args = array() ) {
-      $output .= "</li>\n";
+
+   		if ( $args->walker->has_children ){
+	   		$output .= "</div>\n";
+	   	}
+	   	else
+	   	{
+	   		$output .= "</a>\n";
+	   	}
+      
    }
 
 }
