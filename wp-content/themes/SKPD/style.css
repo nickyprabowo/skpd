@@ -1,0 +1,238 @@
+/*Theme Name: Universal SKPD
+
+Theme URI: Your theme's URL
+
+Description: Tema untuk SKPD Jakarta
+
+Version: 1.0 
+
+Author: Nicky
+
+*/
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('fonts/Open Sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans Semibold';
+    src: url('fonts/Open Sans/OpenSans-Semibold.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans Bold';
+    src: url('fonts/Open Sans/OpenSans-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('fonts/Merriweather/Merriweather-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather Bold';
+    src: url('fonts/Merriweather/Merriweather-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather Black';
+    src: url('fonts/Merriweather/Merriweather-Black.ttf');
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'OpenSans Bold';
+}
+
+body{
+	font-family: 'Merriweather';
+	-webkit-transition: all 500ms ease-in-out;
+	color: #333333;
+}
+
+body.pushable{
+	background: #FFFFFF !important;
+}
+
+
+a, p, .dropdown {
+	font-family: 'OpenSans', sans-serif;
+}
+
+ol li{
+	margin-bottom: 10px;
+    line-height: 25px;
+}
+
+.main-menu{
+	background: #FFFFFF !important;
+	border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+}
+
+.mobile-nav{
+	display: none;
+}
+
+.mobile-label{
+	margin-left: 0.6em;
+}
+
+.mobile-label .title{
+	margin-bottom: 0px;
+}
+
+.mobile-label .subtitle{
+	margin-top: 0px;
+}
+
+.golo{
+	width: 55px;
+}
+
+.search-btn i, .search-close i, i.sidebar{
+	margin-right: 0em !important;
+}
+
+.search-btn{
+	border-radius: 10px;
+}
+
+.search-close{
+	/* background: rgba(33,133,208,0.25) !important;
+	color: rgba(33,133,208,1) !important; */
+}
+
+.ui.menu:not(.vertical) .item.search-ui, .ui.menu:not(.vertical) .item.search-close{
+	display: none;
+}
+
+.ui.menu.item .drop{
+	padding: 0;
+}
+
+.pusher{
+	/* padding-bottom: 2em; */
+}
+
+.ordi-page{
+	margin-top: 30px;
+}
+
+.event-date h3{
+	margin-top: 0;
+}
+
+.event-date{
+	padding: 10px 0px;
+	text-align: center;
+}
+
+.event-date-bg{
+	background: #ececec !important;
+}
+
+p.event-day{
+	font-size: 3rem;
+	margin-bottom: 0;
+	font-weight: 700;
+}
+
+p.event-month{
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+/* nav tabs */
+
+.nav-tabs{
+	float: right;
+	border-bottom: none !important;
+	margin-top: 0 !important;
+}
+
+.nav-item{
+	clear: left;
+}
+
+.nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-item.open .nav-link:hover, .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover{
+	border: none !important;
+}
+
+.nav-tabs .nav-link {
+	border: none !important;
+}
+
+.nav-tabs .nav-item+.nav-item{
+	margin-left:0 !important;
+}
+
+/* end of nav tabs */
+
+/* Form kontak */
+
+.so-widget-sow-contact-form-default-e42863c4ccf0 .sow-contact-form {
+	border: none !important;
+	background: #FFFFFF !important; 
+}
+
+.sow-field-container{
+	margin-bottom: 1em;
+}
+
+.sow-text-field{
+	padding: 0.5em;
+}
+
+textarea{
+	border-color: #dedede;
+}
+
+/* end of form kontak*/
+
+.footer{
+	
+}
+
+.footer .copy{
+	color: #9e9e9e;
+	font-size: 13px; 
+	letter-spacing: 0.5px;
+}
+
+.pulse {
+  -webkit-animation:pulse 1s infinite;
+}
+
+@media only screen and (max-width: 992px) {
+	
+	.main-menu {
+        display: none !important;
+    }
+
+    .ui.hidden{
+		display: block;
+	}
+
+	.mobile-nav{
+		display: block;
+		border-bottom: 1px solid #d8d8d8;
+	}
+
+	.bordered {
+	    padding: 2em 0;
+	}
+
+	h1.title{
+		font-size: 1.1em;
+	}
+
+	.sidebar ul.menu{
+		padding-left: 20px;
+	}
+
+	.sidebar li a, .sidebar ul li a{
+		color: #000000;
+	}
+
+}
