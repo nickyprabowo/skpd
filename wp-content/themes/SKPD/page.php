@@ -4,7 +4,6 @@
   <div class="ui container">
     <div class="ui stackable grid">
       <div class="ui sixteen wide column">
-        <div class="ui items">
           
           <?php if ( have_posts() ) : ?>
           
@@ -31,7 +30,6 @@
 
           <?php endif; ?>
 
-        </div>
       </div>
     </div>
   </div>

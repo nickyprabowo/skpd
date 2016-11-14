@@ -261,18 +261,18 @@ function custom_taxonomies_terms_links($id) {
     $post_type = $post->post_type;
     // get post type taxonomies
     $taxonomies = get_object_taxonomies($post_type);
-    $out = "";
+    $out = '';
     foreach ($taxonomies as $taxonomy) {        
         $out .= "";
         // get the terms related to post
         $terms = get_the_terms( $post->ID, $taxonomy );
         if ( !empty( $terms ) ) {
             foreach ( $terms as $term )
-                $out .= '<i class="mini circle icon"></i><a class="cat" href="' .get_term_link($term->slug, $taxonomy) .'">'.$term->name.'</a> ';
+                $out .= '<a class="cat ui blue label" href="' .get_term_link($term->slug, $taxonomy) .'">'.$term->name.'</a> ';
         }
         $out .= "";
     }
-    $out .= "</i>";
+    $out .= "";
     return $out;
 }
 

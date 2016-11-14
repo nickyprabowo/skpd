@@ -33,6 +33,12 @@
         <div class="ui secondary menu page-nav">
           <div class="header item">
             <img class="ui centered golo image" src="<?php echo get_template_directory_uri().'/img/dki.png'; ?>" alt="">
+            <div class="content">
+              <a href="<?php echo site_url(); ?>">
+                <div class="ui sub header"><h2>BPMPKB</h2></div>
+                <p>DKI JAKARTA</p>
+              </a>
+            </div>
           </div>
           <div class="right menu">
             <?php 

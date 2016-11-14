@@ -4,35 +4,23 @@
   <div class="ui container">
     <div class="ui stackable grid">
       <div class="ui sixteen wide column">
-        <div class="ui items">
           
           <?php if ( have_posts() ) : ?>
           
               <?php
-  
+
               while ( have_posts() ) : the_post(); ?>
-                  <div class="item">
-                    <div class="content">
-                      <div class="header">
-                        <h2 class="stripe blue"><?php the_title(); ?></h2>
-                      </div>
-                      <div class="description">
-                        <p><?php the_excerpt (); ?></p>
+                <article class="content">
+                  <div class="ui container">
+                    <div class="single-post-title">
+                      <div class="post-content">
+                        <?php the_content(); ?>
                       </div>
                     </div>
                   </div>
+                </article>
 
               <?php endwhile; ?> 
-
-              <!-- Add the pagination functions here. -->
-
-              <?php 
-
-                /*wp_pagenavi(array('query' => $pos)); 
-                wp_reset_postdata();*/
-
-              ?>
-
 
           <?php else : ?>
 
@@ -42,7 +30,6 @@
 
           <?php endif; ?>
 
-        </div>
       </div>
     </div>
   </div>
