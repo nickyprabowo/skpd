@@ -83,6 +83,7 @@ ol li{
 
 .mobile-nav{
 	display: none;
+	margin-bottom: 30px;
 }
 
 .mobile-label{
@@ -192,6 +193,21 @@ p.event-month{
 }
 
 /* end of nav tabs */
+
+/* headline title for program */
+.headline-content{
+	color: #ffffff;
+	position: absolute;
+	right: 20;
+	left: 20;
+	bottom: 40;
+}
+
+/* image item */
+.custom-img{
+	width: 220px;
+	height: auto;
+}
 
 /* Card */
 

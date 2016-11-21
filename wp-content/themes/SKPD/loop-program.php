@@ -1,5 +1,5 @@
 <div class="ui grid container">
-  <!-- <?php if ( have_posts() ) : ?> -->
+  <?php if ( have_posts() ) : ?>
   <div class="ui link three stackable fluid cards">            
     <?php
   
@@ -23,12 +23,12 @@
                ?>
             </div>
             <div class="description">
-              <?php echo excerpt(20); ?>
+              <p><?php echo excerpt(20); ?></p>
             </div>
           </div>
           <div class="extra content">
             <span class="right floated">
-              <?php the_time('d F Y'); ?>
+              <i class="calendar icon"></i> <?php the_time('d F Y'); ?>
             </span>
           </div>
         </div>
@@ -36,10 +36,10 @@
 
       <?php endwhile; ?>
       </div>
-          <!--  <?php else : ?> -->
+          <?php else : ?>
 
       <p><?php _e('Sorry, no images available'); ?></p>
 
-    <!-- <?php endif; ?> -->
+      <?php endif; ?>
       
   </div>

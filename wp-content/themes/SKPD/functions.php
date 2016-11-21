@@ -174,7 +174,7 @@ add_image_size( 'taker-thumbnail', 400, 400, true );
           else 
           {
 
-            set_post_thumbnail($post->ID, '226');
+            set_post_thumbnail($post->ID, '95');
 
           }
       }

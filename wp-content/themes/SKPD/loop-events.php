@@ -1,8 +1,8 @@
 <div class="ui grid container">
-	<div class="ui items">
+	<div class="ui very relaxed items">
 	<?php if ( have_posts() ) : ?>
               
-    <?php
+    	<?php
   
     	while ( have_posts() ) : the_post(); ?>
 

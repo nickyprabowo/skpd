@@ -25,8 +25,6 @@
 
 <body <?php body_class(); ?>>
   
-
-
   <div class="main-menu">
     <div class="ui grid container">
       <div class="column">
@@ -90,6 +88,20 @@
   </div>
 
   <div class="ui vertical left sidebar accordion menu">
+    <?php 
+      wp_nav_menu(array(
+        'menu'              => 'primary',
+        'theme_location'    => 'primary',
+        'depth'             => 3,
+        'container'         => '',
+        'container_id'      => '',
+        'container_class'   => '',
+        'menu_class'        => '',
+        'fallback_cb'       => '',
+        'items_wrap'        => '%3$s',
+        'walker'            => new walkah()
+      ));
+    ?>
     <a class="item">Link 1</a>
     <a class="item">Link 2</a>
     <div class="item">
