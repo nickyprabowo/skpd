@@ -1,14 +1,12 @@
 <div class="ui grid container">
   <?php if ( have_posts() ) : ?>
-	<!-- <div class="ui items"> -->
-  <div class="ui two stackable link fluid cards headline-program">
-
+  <!-- <div class="ui link stackable fluid cards">    -->         
     <?php
-    
-      while ( have_posts() ) : the_post(); ?>
+  
+    while ( have_posts() ) : the_post(); ?>
 
-        <div class="flat card">
-          <div class="ui huge image">
+        <div class="ui link fluid flat card">
+          <div class="ui massive image">
             <?php 
               if ( has_post_thumbnail() ) {
                 the_post_thumbnail();
@@ -34,15 +32,14 @@
             </span>
           </div>
         </div>
+        
 
-    <?php endwhile; ?>
+      <?php endwhile; ?>
+      <!-- </div> -->
+          <?php else : ?>
 
+      <p><?php _e('Sorry, no images available'); ?></p>
+
+      <?php endif; ?>
+      
   </div>
-    
-  <?php else : ?>
-
-    <p><?php _e('Sorry, no programs available'); ?></p>
-
-  <?php endif; ?>
-</div>
-

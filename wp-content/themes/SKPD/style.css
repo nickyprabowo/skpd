@@ -209,6 +209,27 @@ p.event-month{
 	height: auto;
 }
 
+/* Program */
+.headline-program > .flat.card:first-child{
+	width: 60%;
+}
+
+.headline-program > .flat.card:first-child > .content{
+	position: absolute;
+    bottom: 10%;
+    width: 100%;
+    border-top: none;
+}
+
+.headline-program > .flat.card:first-child > .extra.content{
+	position: absolute;
+	right: 0;
+}
+
+.headline-program > .flat.card:nth-child(2){
+	width: 35.4%;
+}
+
 /* Card */
 
 .ui.card, .ui.cards>.flat.card{
@@ -219,6 +240,9 @@ p.event-month{
 	border-radius: 0 !important;
 }
 
+.ui.card>:first-child{
+	border-radius: 0 !important;
+}
 /* Form kontak */
 
 .so-widget-sow-contact-form-default-e42863c4ccf0 .sow-contact-form {

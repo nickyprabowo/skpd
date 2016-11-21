@@ -29,11 +29,11 @@ class Walkah extends Walker_Nav_Menu {
 
 	   /*$output .= $indent . '<li' . $id . $class_names .'>';*/
 	   if ( $args->walker->has_children ){
-	   		$output .= $indent . '<li class="ui dropdown item">';
+	   		$output .= $indent . '<li class="ui dropdown item prime">';
 	   	}
 	   	else
 	   	{
-	   		$output .= $indent . '<li class="item">';
+	   		$output .= $indent . '<li class="item prime">';
 	   	}
 
 	   $atts = array();

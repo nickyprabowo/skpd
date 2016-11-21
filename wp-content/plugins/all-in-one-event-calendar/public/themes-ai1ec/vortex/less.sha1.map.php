@@ -332,6 +332,11 @@
       'size' => 10665,
       'sha1' => '8d7d0d81e445093ecc58577605c36320d2741ba7',
     ),
+    'less\\interactive_frontend.less' => 
+    array (
+      'size' => 2790,
+      'sha1' => '4e0de2217f0b95f318049aff0bdc244b39e765b3',
+    ),
     'less\\plugins\\datepicker3.less' => 
     array (
       'size' => 5690,

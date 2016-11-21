@@ -33,117 +33,17 @@ register_nav_menus(
 add_action(‘template_redirect’, ‘bwp_template_redirect’);
 function bwp_template_redirect()
 {
-if (is_author())
-{
-wp_redirect( home_url() ); exit;
+	if (is_author())
+	{
+		wp_redirect( home_url() ); exit;
+	}
 }
-}
+
+
 
 // Register Custom Navigation Walker
 require_once('walkah.php');
 require_once('sider.php');
-// require Search System
-require_once('wp-advanced-search/wpas.php');
-
-function demo_ajax_search() {
-    $args = array();
-    $args['wp_query'] = array( 'post_type' => 'attachment', 
-                               'orderby' => 'title', 
-                               'post_status' => 'any',
-                               'order' => 'ASC',
-                               'tax_query' => array(
-					                            array(
-					                              'taxonomy' => 'kategori_media',
-					                              'field'    => 'slug',
-					                              'terms'    => 'peraturan'
-					                            )
-					                          )
-                        );
-
-    $args['form'] = array( 
-
-    					'auto_submit' => true,
-    					'class'	=>	'ui form' 
-
-    					);
-
-    $args['form']['ajax'] = array( 'enabled' => true,
-                                   'show_default_results' => true,
-                                   'results_template' => 'template-ajax-results.php',
-                                   'button_text' => 'Load More Results',
-                                   'class' => 'jo'
-                                   );
-
-    $args['fields'][] = array( 'type' => 'search', 
-    						   'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'placeholder' => 'Masukkan Kata Kunci' );
-
-    /*$args['fields'][] = array( 'type' => 'post_type', 
-                               'format' => 'hidden', 
-                               'values' => array('media' => 'attachment') ,
-                               'default_all' => true
-                               );*/
-
-    /*$args['fields'][] = array( 'type' => 'taxonomy', 
-                               'format' => 'checkbox', 
-                               'pre_html' => '<div class="field" style="display:none;">',
-                          	   'post_html' => '</div>',
-                               'label' => 'Filter', 
-                               'taxonomy' => 'kategori_media',
-                               'term-format' => 'slug',
-                               'default' => 'peraturan'
-                               );*/
-
-    $args['fields'][] = array( 'type' => 'taxonomy', 
-                               'format' => 'select', 
-                               'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'label' => 'Kategori', 
-                               'taxonomy' => 'kategori_peraturan',
-                               'term-format' => 'slug',
-                               'default' => ''
-                               );
-
-    $args['fields'][] = array( 'type' => 'taxonomy', 
-                               'format' => 'select', 
-                               'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'label' => 'Tahun Terbit', 
-                               'taxonomy' => 'kategori_tahun',
-                               'term-format' => 'slug'
-                               );
-
-    $args['fields'][] = array( 'type' => 'orderby', 
-                               'format' => 'select', 
-                               'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'label' => 'Urutkan Berdasarkan', 
-                               'values' => array('title' => 'Judul', 'date' => 'Data Masuk') );
-
-    $args['fields'][] = array( 'type' => 'order', 
-                               'format' => 'radio',
-                               'label' => 'Pengurutan', 
-                               'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'values' => array('ASC' => 'ASC', 'DESC' => 'DESC'), 
-                               'default' => 'ASC' );
-
-    $args['fields'][] = array( 'type' => 'posts_per_page', 
-                               'format' => 'select', 
-                               'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'label' => 'Jumlah Pencarian', 
-                               'values' => array(2=>2, 5=>5, 10=>10), 
-                               'default' => 10 );
-
-    $args['fields'][] = array( 'type' => 'reset',
-                               'class' => 'ui fluid button',
-                               'value' => 'Reset' );
-
-    register_wpas_form('myform', $args);
-}
-add_action('init', 'demo_ajax_search');
 
 //image thumbnail
 add_theme_support( 'post-thumbnails' );
@@ -563,6 +463,7 @@ function replace_admin_menu_icons_css() {
 }
 
 add_action( 'admin_head', 'replace_admin_menu_icons_css' );
+
 
 
 
