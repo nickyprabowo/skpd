@@ -132,6 +132,18 @@ ol li{
 	padding: 0;
 }
 
+.item .meta .have-icon {
+	display: inline-block;
+	position: relative;
+	padding-left: 20px;
+    line-height: 1.5em;
+}
+
+.item .meta .have-icon i.icon {
+	position: absolute;
+	left: 0;
+}
+
 .pusher{
 	/* padding-bottom: 2em; */
 }

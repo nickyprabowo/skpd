@@ -28,7 +28,7 @@
 		    <div class="content">
 		      <a class="header"><?php echo $title; ?></a>
 		      <div class="meta">
-		        <span><i class="marker icon"></i> <?php echo $address; ?></span>
+		        <span class="have-icon"><i class="marker icon"></i> <?php echo $address; ?></span>
 		      </div>
 		      <div class="description">
 		        <p><?php echo $content; ?></p>
