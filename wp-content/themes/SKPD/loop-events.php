@@ -16,6 +16,8 @@
 		$day		= date('d', $time);
 		$year		= date('Y', $time);
 		$address 	= tribe_get_address( $post->ID );
+		$city 		= tribe_get_city( $post->ID );
+		
 	?>
 
 		  <div class="item">
@@ -28,7 +30,7 @@
 		    <div class="content">
 		      <a class="header"><?php echo $title; ?></a>
 		      <div class="meta">
-		        <span class="have-icon"><i class="marker icon"></i> <?php echo $address; ?></span>
+		        <span class="have-icon"><i class="marker icon"></i> <?php echo $address . ', ' . $city; ?></span>
 		      </div>
 		      <div class="description">
 		        <p><?php echo $content; ?></p>
