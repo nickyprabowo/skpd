@@ -83,7 +83,7 @@ ol li{
 
 .mobile-nav{
 	display: none;
-	margin-bottom: 30px;
+	/* margin-bottom: 30px; */
 }
 
 .mobile-label{

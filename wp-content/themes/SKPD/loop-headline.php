@@ -1,4 +1,4 @@
-<div class="ui grid container">
+
   <?php if ( have_posts() ) : ?>
 	<!-- <div class="ui items"> -->
   <div class="ui two stackable link fluid cards headline-program">
@@ -44,5 +44,4 @@
     <p><?php _e('Sorry, no programs available'); ?></p>
 
   <?php endif; ?>
-</div>
 
