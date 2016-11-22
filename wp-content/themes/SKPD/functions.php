@@ -168,7 +168,7 @@ function custom_taxonomies_terms_links($id) {
         $terms = get_the_terms( $post->ID, $taxonomy );
         if ( !empty( $terms ) ) {
             foreach ( $terms as $term )
-                $out .= '<a class="cat ui blue label" href="' .get_term_link($term->slug, $taxonomy) .'">'.$term->name.'</a> ';
+                $out .= '<a class="cat ui label" href="' .get_term_link($term->slug, $taxonomy) .'"><i class="tag icon"></i> '.$term->name.'</a> ';
         }
         $out .= "";
     }

@@ -31,7 +31,7 @@ get_header();
 	
 	<div class="custom-tab">
 		<div class="ui active tab" data-tab="news">
-			news
+			<?php get_template_part('loop', 'news-default' ); ?>
 		</div>
 		<div class="ui tab" data-tab="events">
 			<form action="#" method="post">

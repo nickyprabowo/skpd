@@ -56,7 +56,7 @@ p{
 
 body{
 	font-family: 'Merriweather Light';
-	font-size: 13px;
+	font-size: 14px;
 	-webkit-transition: all 500ms ease-in-out;
 	color: #333333;
 }
@@ -100,6 +100,10 @@ ol li{
 
 .golo{
 	width: 55px;
+}
+
+.meta{
+	margin: 0.4em 0em 0.8em;
 }
 
 .header.item .content{
@@ -156,6 +160,7 @@ ol li{
 p.event-day{
 	font-size: 3rem;
 	font-weight: 700;
+	margin-bottom: 0.5em;
 }
 
 p.event-month{
@@ -205,11 +210,12 @@ p.event-month{
 
 /* image item */
 .custom-img{
-	width: 220px;
+	width: 200px;
 	height: auto;
 }
 
 /* Program */
+
 .headline-program > .flat.card:first-child{
 	width: 60%;
 }
@@ -227,7 +233,7 @@ p.event-month{
 }
 
 .headline-program > .flat.card:nth-child(2){
-	width: 35.4%;
+	width: 35.1%;
 }
 
 /* Card */

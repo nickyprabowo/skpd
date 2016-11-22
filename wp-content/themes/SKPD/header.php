@@ -53,8 +53,7 @@
                 'walker'            => new walkah()
               ));
             ?>
-            <a class="item prime">Berita</a>
-            <div class="ui dropdown item prime" tabindex="0">
+            <!-- <div class="ui dropdown item prime" tabindex="0">
               Dropdown
               <i class="dropdown icon"></i>
               <div class="menu transition hidden" tabindex="-1">
@@ -66,7 +65,7 @@
                 <div class="divider"></div>
                 <div class="item">One more separated link</div>
               </div>
-            </div>
+            </div> -->
             <div class="item search-ui">
               <div class="ui fluid search">
                 <div class="ui icon input">
