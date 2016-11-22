@@ -100,4 +100,8 @@ jQuery(document)
 		return false;
 	}
 
+
+	// TAB MENU FOR EVENT AND NEWS
+	jQuery('#news-tab .button').tab();
+
   });
