@@ -7,6 +7,8 @@
 // Define the version so we can easily replace it throughout the theme
 define( 'NAKED_VERSION', 1.0 );
 
+require_once 'helper/helper.php';
+
 /*-----------------------------------------------------------------------------------*/
 /*  Set the maximum allowed width for any content in the theme
 /*-----------------------------------------------------------------------------------*/
