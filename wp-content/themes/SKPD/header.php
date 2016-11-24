@@ -66,14 +66,18 @@
                 <div class="item">One more separated link</div>
               </div>
             </div> -->
-            <div class="item search-ui">
-              <div class="ui fluid search">
-                <div class="ui icon input">
-                  <input class="prompt" type="text" placeholder="Search...">
-                  <i class="search icon"></i>
+              
+            <form action="<?php echo home_url( '/' ); ?>">
+              <div class="item search-ui">
+                <div class="ui fluid search">
+                  <div class="ui icon input">
+                    <input class="prompt" name="s" type="text" placeholder="Search...">
+                    <i class="search icon"></i>
+                  </div>
                 </div>
               </div>
-            </div>
+            </form>
+            
             <a class="item search-btn">
               <i class="search icon"></i>
             </a>
