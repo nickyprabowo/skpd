@@ -1,4 +1,4 @@
-<div class="ui grid two column">
+<div class="ui stackable grid two column">
 	
 	<?php
 	$args = array(

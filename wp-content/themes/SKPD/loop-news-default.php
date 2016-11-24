@@ -1,4 +1,4 @@
-<div class="ui grid two column">
+<div class="ui stackable grid two column">
 
 	<?php 
 		$args = array(
@@ -22,10 +22,11 @@
 			    	<?php 
 		              if ( has_post_thumbnail() ) {
 		                the_post_thumbnail();
-		            } ?>
+		              } 
+		            ?>
 			    </div>
 			    <div class="content">
-			      	<a class="header"><?php echo the_title(); ?></a>
+			      	<a class="header"><?php the_title(); ?></a>
 			      	<div class="meta">
 				        <span><i class="calendar icon"></i> <?php the_time('d F Y'); ?></span>
 				    </div>

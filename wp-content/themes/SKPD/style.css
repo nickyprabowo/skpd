@@ -56,7 +56,7 @@ p{
 
 body{
 	font-family: 'Merriweather Light';
-	font-size: 14px;
+	font-size: 13px;
 	-webkit-transition: all 500ms ease-in-out;
 	color: #333333;
 }
@@ -83,7 +83,7 @@ ol li{
 
 .mobile-nav{
 	display: none;
-	/* margin-bottom: 30px; */
+	margin-bottom: 30px;
 }
 
 .mobile-label{
@@ -272,7 +272,20 @@ textarea{
 /* end of form kontak*/
 
 .footer{
-	
+	border-top: 1px solid #e3e3e3;
+}
+
+.footer .header h3{
+	text-transform: uppercase;
+}
+
+.active-footer{
+	padding: 3em !important;
+}
+
+.items.tautan .item{
+	margin-bottom: 1em;
+	font-size: 12px;
 }
 
 .footer .copy{

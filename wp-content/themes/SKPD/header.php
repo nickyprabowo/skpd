@@ -30,11 +30,11 @@
       <div class="column">
         <div class="ui secondary menu page-nav">
           <div class="header item">
-            <img class="ui centered golo image" src="<?php echo get_template_directory_uri().'/img/dki.png'; ?>" alt="">
+            <img class="ui centered golo image" src="<?php if(get_theme_mod( 'img-upload' )!=null || get_theme_mod( 'img-upload' ) != '') echo get_theme_mod( 'img-upload' ); else echo get_template_directory_uri().'/img/dki.png'; ?>"" alt="">
             <div class="content">
               <a href="<?php echo site_url(); ?>">
-                <div class="ui sub header"><h2>BPMPKB</h2></div>
-                <p>DKI JAKARTA</p>
+                <div class="ui sub header"><h2><?php echo get_theme_mod( 'nick_title_abr', 'your title' ); ?></h2></div>
+                <p><?php echo get_theme_mod( 'nick_subtitle', 'your subtitle' ); ?></p>
               </a>
             </div>
           </div>
@@ -101,8 +101,6 @@
         'walker'            => new walkah()
       ));
     ?>
-    <a class="item">Link 1</a>
-    <a class="item">Link 2</a>
     <div class="item">
       <a class="active title">
         <i class="dropdown icon"></i>
@@ -146,11 +144,11 @@
         <div class="ui large secondary menu">
           <div class="item head">
             <div class="ui logo image">
-              <img class="ui mini image" src="<?php echo get_template_directory_uri().'/img/dki.png'; ?>" alt="">
+              <img class="ui mini image" src="<?php if(get_theme_mod( 'img-upload' )!=null || get_theme_mod( 'img-upload' ) != '') echo get_theme_mod( 'img-upload' ); else echo get_template_directory_uri().'/img/dki.png'; ?>"" alt="">
             </div>
             <div class="mobile-label">
-              <h3 class="title">BPMPKB</h3>
-              <h5 class="subtitle">DKI JAKARTA</h5>
+              <h3 class="title"><?php echo get_theme_mod( 'nick_title_abr', 'your abbreviation title' ); ?></h3>
+              <h5 class="subtitle"><?php echo get_theme_mod( 'nick_subtitle', 'your subtitle' ); ?></h5>
             </div>
           </div>
           <div class="right item">

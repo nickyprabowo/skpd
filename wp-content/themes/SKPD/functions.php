@@ -114,7 +114,6 @@ function naked_scripts()  {
 
 	// Stylesheet
 	wp_enqueue_style('semantic-css', get_stylesheet_directory_uri() . '/css/semantic.min.css');
-	/*wp_enqueue_style('Roboto', 'https://fonts.googleapis.com/css?family=Roboto');*/
 	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 
 	// Javascripts
@@ -254,7 +253,7 @@ function nick_customizer( $wp_customize ) {
 	// SITE TITLE SETTING
 	$wp_customize->add_setting('nick_title',
 	array(
-        'default' => 'Kelurahan di Jakarta',
+        'default' => 'SKPD di Jakarta',
     ) );
 	
 	$wp_customize->add_control('nick_title',
@@ -265,10 +264,24 @@ function nick_customizer( $wp_customize ) {
     ) );
 	// END OF SITE TITLE SETTING
 
+	// SITE TITLE SETTING
+	$wp_customize->add_setting('nick_title_abr',
+	array(
+        'default' => 'YNWA',
+    ) );
+	
+	$wp_customize->add_control('nick_title_abr',
+	array(
+        'label' => 'Judul Singkatan',
+        'section' => 'general_section',
+        'type' => 'text',
+    ) );
+	// END OF SITE TITLE SETTING
+
 	// SITE SUBTITLE SETTING
 	$wp_customize->add_setting('nick_subtitle',
 	array(
-        'default' => 'Kelurahan',
+        'default' => 'Jakarta',
     ) );
 	
 	$wp_customize->add_control('nick_subtitle',

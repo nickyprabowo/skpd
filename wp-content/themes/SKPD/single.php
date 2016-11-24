@@ -5,7 +5,7 @@
 
       <?php while ( have_posts() ) : the_post(); ?>
 
-  <div class="main-content">
+  
     <div class="ui container">
       <div class="white content">
         <h1 class="ui header"><?php the_title(); ?></h1>
@@ -36,7 +36,7 @@
     
     <?php wp_reset_query(); ?>
     </div>
-  </div>
+  
 
 </div>
 
