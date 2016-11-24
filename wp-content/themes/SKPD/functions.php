@@ -114,6 +114,8 @@ add_action( 'widgets_init', 'naked_register_sidebars' );
 
 function naked_scripts()  { 
 
+	global $wp_query;
+
 	// Stylesheet
 	wp_enqueue_style('semantic-css', get_stylesheet_directory_uri() . '/css/semantic.min.css');
 	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
@@ -135,7 +137,9 @@ function naked_scripts()  {
 		'collapse' => __( 'collapse child menu', 'kelurahan' ),
 		'ajaxurl'  => $ajaxurl,
 		'noposts'  => esc_html__('No older posts found', 'kelurahan'),
-		'loadmore' => esc_html__('Load more', 'kelurahan')
+		'loadmore' => esc_html__('Load more', 'kelurahan'),
+		'queryVars' => json_encode( $wp_query->query ),
+		'timNonce'	=> wp_create_nonce('timNonceWp' )
 	) );
   
 }
@@ -479,6 +483,47 @@ function replace_admin_menu_icons_css() {
 
 add_action( 'admin_head', 'replace_admin_menu_icons_css' );
 
+
+add_action( 'wp_ajax_nopriv_tim_event_ajax_pagination', 'vio_event_ajax_pagination' );
+add_action( 'wp_ajax_vio_event_ajax_pagination', 'vio_event_ajax_pagination' );
+function vio_event_ajax_pagination() {
+
+	check_ajax_referer( 'timNonceWp', 'nonce' );
+
+    $query_vars['paged'] 			= (int)$_POST['page'];
+    $query_vars['posts_per_page'] 	= get_option( 'posts_per_page' );
+    $query_vars['post_status'] 	= 'publish';
+    $query_vars['s'] 			= esc_sql( $_POST['extraQuery']['s'] );
+
+	$query_month = esc_sql( $_POST['extraQuery']['m']  );
+	if( ! empty( $query_month ) && $query_month != '-' ) {
+
+
+	    // $year 		= esc_sql( $_POST['extraQuery']['year'] );
+	    $year 		= date('Y');
+		$start_date = $year . '-' . $query_month;
+
+		$date = new DateTime( $start_date . "-01");
+		$date->add( new DateInterval("P1M") );
+		
+		$end_date = $date->format('Y-m');;
+		$query_vars['start_date'] = $start_date;
+		$query_vars['end_date'] = $end_date;
+
+	}
+
+	$posts = tribe_get_events( $query_vars );
+    if( count( $posts ) <= 0 ) { 
+    	echo '-1';
+    } else {
+    	set_query_var( 'posts', $posts );
+    	get_template_part('loop', 'events-default' );
+    }
+	
+	wp_reset_postdata();
+
+    die();
+}
 
 
 
