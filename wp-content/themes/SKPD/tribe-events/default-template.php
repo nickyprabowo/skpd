@@ -86,17 +86,18 @@ get_header();
 				<div class="ui stackable grid two column" id="event-list">
 					<?php get_template_part('loop', 'events-default' ); ?>
 				</div>
+
+				<div class="ui centered grid">
+				  <div class="column">
+					<a class="ui right labeled icon button" id="event-next-page" data-page="2" href="<?php echo tribe_get_listview_next_link() ?>">
+					  <i class="right arrow icon"></i>
+					  <?php echo __( 'Load More', 'naked' ); ?>
+					</a>
+				  </div>
+				</div>
 			</div>
 		</div><!-- end custom-tab -->
 		
-		<div class="ui centered grid">
-		  <div class="column">
-			<a class="ui right labeled icon button" id="event-next-page" data-page="2" href="<?php echo tribe_get_listview_next_link() ?>">
-			  <i class="right arrow icon"></i>
-			  <?php echo __( 'Load More', 'naked' ); ?>
-			</a>
-		  </div>
-		</div>
 	</div>
 
 
