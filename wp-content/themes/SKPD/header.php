@@ -33,7 +33,7 @@
             <img class="ui centered golo image" src="<?php if(get_theme_mod( 'img-upload' )!=null || get_theme_mod( 'img-upload' ) != '') echo get_theme_mod( 'img-upload' ); else echo get_template_directory_uri().'/img/dki.png'; ?>"" alt="">
             <div class="content">
               <a href="<?php echo site_url(); ?>">
-                <div class="ui sub header"><h2><?php echo get_theme_mod( 'nick_title_abr', 'your title' ); ?></h2></div>
+                <h2 class="ui header"><?php echo get_theme_mod( 'nick_title_abr', 'your title' ); ?></h2>
                 <p><?php echo get_theme_mod( 'nick_subtitle', 'your subtitle' ); ?></p>
               </a>
             </div>
@@ -53,19 +53,6 @@
                 'walker'            => new walkah()
               ));
             ?>
-            <!-- <div class="ui dropdown item prime" tabindex="0">
-              Dropdown
-              <i class="dropdown icon"></i>
-              <div class="menu transition hidden" tabindex="-1">
-                <div class="item">Action</div>
-                <div class="item">Another Action</div>
-                <div class="item">Something else here</div>
-                <div class="divider"></div>
-                <div class="item">Separated Link</div>
-                <div class="divider"></div>
-                <div class="item">One more separated link</div>
-              </div>
-            </div> -->
             <div class="item search-ui">
               <div class="ui fluid search">
                 <div class="ui icon input">
@@ -98,42 +85,20 @@
         'menu_class'        => '',
         'fallback_cb'       => '',
         'items_wrap'        => '%3$s',
-        'walker'            => new walkah()
+        'walker'            => new sider()
       ));
     ?>
     <div class="item">
-      <a class="active title">
+      <a class="title">
         <i class="dropdown icon"></i>
         Size
       </a>
-      <div class="active content">
-        <div class="ui form">
-          <div class="grouped fields">
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="size" value="small">
-                <label>Small</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="size" value="medium">
-                <label>Medium</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="size" value="large">
-                <label>Large</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="size" value="x-large">
-                <label>X-Large</label>
-              </div>
-            </div>
-          </div>
+      <div class="content">
+        <div class="ui link list">
+          <div class="active item">Home</div>
+          <a class="item">About</a>
+          <a class="item">Jobs</a>
+          <a class="item">Team</a>
         </div>
       </div>
     </div>

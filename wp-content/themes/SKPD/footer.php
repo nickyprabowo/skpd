@@ -31,13 +31,65 @@
 					<div class="item">link</div>
 			  	</div>
 	   		</div>
-	   		<div class="eight wide column">
+	   		<div class="seven wide column">
 	   			<a href="<?php echo site_url(); ?>">
-	                <div class="ui sub header">
+	                <div class="ui header">
 	                	<h3><?php echo get_theme_mod( 'nick_title', 'your title' ); ?></h3>
 	                </div>
-	                <p><?php echo get_theme_mod( 'nick_subtitle', 'your subtitle' ); ?></p>
 	            </a>
+				<div class="items profil-skpd">
+	            <?php
+					$args = array(
+							'post_type' => 'profil_skpd',
+							'name' => 'alamat'
+					);
+
+					$alamat = new WP_Query($args); 
+				?>
+				<?php if ( $alamat->have_posts() ) : ?>
+							
+					<?php while ( $alamat->have_posts() ) :$alamat->the_post(); ?>
+					
+						<div class="item"><?php the_content(); ?></div>
+
+					<?php endwhile; ?>
+				<?php endif; ?>
+
+				<!------ TELEPON ------>
+				<?php
+					$args = array(
+							'post_type' => 'profil_skpd',
+							'name' => 'telepon'
+					);
+
+					$telepon = new WP_Query($args); 
+				?>
+				<?php if ( $telepon->have_posts() ) : ?>
+							
+					<?php while ( $telepon->have_posts() ) :$telepon->the_post(); ?>
+					
+						<div class="item"><i class="phone icon"></i> <?php echo $post->post_content; ?></div>
+
+					<?php endwhile; ?>
+				<?php endif; ?>
+				<!---------- EMAIL ---------->
+				<?php
+					$args = array(
+							'post_type' => 'profil_skpd',
+							'name' => 'email'
+					);
+
+					$email = new WP_Query($args); 
+				?>
+				<?php if ( $email->have_posts() ) : ?>
+							
+					<?php while ( $email->have_posts() ) :$email->the_post(); ?>
+					
+						<div class="item"><i class="mail icon"></i> <?php echo $post->post_content; ?></div>
+
+					<?php endwhile; ?>
+				<?php endif; ?>
+				</div>
 	   		</div>
 	   </div>
 	</div>

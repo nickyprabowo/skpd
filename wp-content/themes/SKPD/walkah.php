@@ -33,7 +33,7 @@ class Walkah extends Walker_Nav_Menu {
 	   	}
 	   	else
 	   	{
-	   		$output .= $indent . '<li class="item prime">';
+	   		$output .= $indent . '<li class="ui item prime">';
 	   	}
 
 	   $atts = array();

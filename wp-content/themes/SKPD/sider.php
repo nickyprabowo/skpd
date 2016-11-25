@@ -7,23 +7,23 @@ class Sider extends Walker_Nav_Menu {
 
    public function start_lvl( &$output, $depth = 0, $args = array() ) {
       $indent = str_repeat("\t", $depth);
-      $output .= "\n$indent<ul class=\"menu\">";
+      $output .= "\n$indent<div class=\"content\"><div class=\"ui link list\">";
    }
 
    public function end_lvl( &$output, $depth = 0, $args = array() ) {
       $indent = str_repeat("\t", $depth);
-      $output .= "$indent</ul>\n";
+      $output .= "$indent</div></div>\n";
    }
 
    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
 	   if ( $args->walker->has_children ){
-	   		$output .= $indent . '<li class="header item">';
+	   		$output .= $indent . '<div class="item">';
 	   	}
 	   	else
 	   	{
-	   		$output .= $indent . '<li class="item">';
+	   		$output .= $indent . '<div class="item">';
 	   	}
 
 	   $atts = array();
@@ -45,8 +45,8 @@ class Sider extends Walker_Nav_Menu {
 	   $icon = '';
 	   $no_link = '';
 	   if ( $args->walker->has_children ){
-	   		$icon = "<i class=\"angle down icon\"></i>";
-	   		$item_output = $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after . $icon;
+	   		$icon = "<a class=\"title\"><i class=\"dropdown icon\"></i>";
+	   		$item_output = $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after . $icon ."</a>";
 	   }
 	   else
 	   {
@@ -63,7 +63,7 @@ class Sider extends Walker_Nav_Menu {
    }
 
    public function end_el( &$output, $item, $depth = 0, $args = array() ) {
-      $output .= "</li>\n";
+      $output .= "</div>\n";
    }
 
 }

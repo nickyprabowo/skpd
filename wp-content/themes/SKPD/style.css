@@ -45,8 +45,8 @@ Author: Nicky
     src: url('fonts/Merriweather/Merriweather-Black.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
-	font-family: 'OpenSans Bold';
+h1, h2, h3, h4, h5, h6, .ui.header, .ui.items>.item>.content>.header, .ui.cards>.card>.content>.header{
+	font-family: 'OpenSans Semibold';
 }
 
 p{
@@ -74,6 +74,10 @@ ol li{
 	background: #FFFFFF !important;
 	border-bottom: 1px solid rgba(34, 36, 38, 0.15);
     box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+}
+
+.main-menu .header{
+	margin-bottom:0rem;
 }
 
 .ui.menu{
@@ -225,6 +229,12 @@ p.event-month{
     bottom: 10%;
     width: 100%;
     border-top: none;
+    color: #FFFFFF;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+}
+
+.headline-program > .flat.card:first-child > .content >.header, .headline-program > .flat.card:first-child > .content >.description{
+	color: #FFFFFF;
 }
 
 .headline-program > .flat.card:first-child > .extra.content{
@@ -276,7 +286,8 @@ textarea{
 }
 
 .footer .header h3{
-	text-transform: uppercase;
+	text-transform: capitalize;
+	margin-bottom: 1em;
 }
 
 .active-footer{
@@ -286,6 +297,22 @@ textarea{
 .items.tautan .item{
 	margin-bottom: 1em;
 	font-size: 12px;
+}
+
+.items.profil-skpd{
+	font-size: 12px;
+}
+
+.items.profil-skpd .item:first-child{
+	margin-bottom: 0.8em;
+}
+
+.items.profil-skpd .item{
+	margin-top: 0.5em;
+}
+
+.items.profil-skpd .item p{
+	margin-bottom: 0.3em;
 }
 
 .footer .copy{

@@ -14,7 +14,7 @@
               } ?>
 		    </div>
 		    <div class="content">
-		      	<a class="header"><?php the_title(); ?></a>
+		      	<a class="ui medium header"><?php the_title(); ?></a>
 		      	<div class="meta">
 			        <span><i class="calendar icon"></i> <?php the_time('d F Y'); ?></span>
 			    </div>

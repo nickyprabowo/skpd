@@ -13,7 +13,7 @@
               } ?>
           </div>
           <div class="content">
-            <div class="header"><?php the_title(); ?></div>
+            <div class="ui header"><?php the_title(); ?></div>
             <div class="meta">
               <?php 
 
