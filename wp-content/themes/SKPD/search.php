@@ -20,59 +20,62 @@
     </div>
   </div>
 
-<div class="earch">
+<div class="page-content">
     <div class="ui text container">
-      <div class="ui stackable grid">
-        <div class="ui sixteen wide column list">
+        <div class="ui stackable grid two column">
 
-          <div class="ui items">
             
             <?php if ( have_posts() ) : ?>
             
                 <?php
 
                 while ( have_posts() ) : the_post(); ?>
-                    <div class="item">
-                      <div class="content">
-                        <div class="meta">
-                          <span class="tanggal"><?php the_time('d F Y'); ?></span>
+                    <div class="column">
+                      <div class="ui very relaxed items">
+                        <div class="item">
+                          <div class="ui tiny image event-date-bg">
+                            <div class="event-date">
+                              <p class="event-day"><?php echo get_the_date('d'); ?></p>
+                              <p class="event-month"><?php echo get_the_date('M'); ?></p>
+                            </div>
+                          </div>
+                          <div class="content">
+                            <a class="header" href="<?php echo get_the_permalink(); ?>"><?php the_title() ?></a>
+                            <div class="description">
+                              <p><?php echo the_excerpt_max_charlength(80); ?></p>
+                            </div>
+                          </div>
                         </div>
-                        <div class="header">
-                          <h2 class="stripe blue"><?php the_title(); ?></h2>
-                        </div>
-                        <div class="description">
-                          <p><?php echo excerpt (60); ?></p>
-                        </div>
-                        <a class="read-more" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                          SELENGKAPNYA
-                          <i class="long arrow right icon"></i>
-                        </a>
                       </div>
                     </div>
 
                 <?php endwhile; ?> 
-            
+              
+                <!-- <div class="ui buttons"> -->
                 <!-- Add the pagination functions here. -->
+               <?php 
 
-                <?php 
-
-                  wp_pagenavi(); 
+                  // wp_pagenavi(); 
                   wp_reset_postdata();
 
                 ?>
-
-
-            <?php else : ?>
-
-                <article class="post error">
-                    <h1 class="404">Maaf, konten yang Anda cari tidak tersedia</h1>
-                </article>
-
-            <?php endif; ?>
-
+                <!-- </div> -->
           </div>
-        </div>
-      </div>
+            
+          <div class="ui centered grid">
+            <div class="column">
+              <?php echo paginate_links(); ?>
+            </div>
+          </div>
+
+          <?php else : ?>
+
+              <article class="post error">
+                  <h1 class="404">Maaf, konten yang Anda cari tidak tersedia</h1>
+              </article>
+
+          <?php endif; ?>
+
     </div>
   </div>
 
