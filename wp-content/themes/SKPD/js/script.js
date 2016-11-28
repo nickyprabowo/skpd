@@ -24,24 +24,27 @@ jQuery(document)
 	  .accordion()
 	;
 
-	// Search Form in Navbar
-	jQuery('a.search-btn').on('click', function(){
-		//nav menu
-		jQuery('.prime').transition('hide');
-		// search form
-		jQuery('.ui.menu:not(.vertical) .item.search-ui').transition('slide left');
-		// search button
-		jQuery('a.search-btn').hide();
-		// close button
-		jQuery('a.search-close').show();
-	});
+	jQuery('.main-menu a.item').on('click', function(){
+		jQuery('.main-menu a.item.active').removeClass('active');
+		$this.addClass('active');
+	})
 
-	jQuery('a.search-close').on('click', function(){
+	jQuery('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+
+	// Search Form in Navbar
+	/*jQuery('a.search-btn').on('click', function(){
+		jQuery('.prime').transition('hide');
+		jQuery('.ui.menu:not(.vertical) .item.search-ui').transition('slide left');
+		jQuery('a.search-btn').hide();
+		jQuery('a.search-close').show();
+	});*/
+
+	/*jQuery('a.search-close').on('click', function(){
 		jQuery('.ui.menu:not(.vertical) .item.search-ui').transition('slide left');
 		jQuery('a.search-close').hide();
 		jQuery('a.search-btn').show();
 		jQuery('.prime').transition('fade down', '2560ms');
-	});
+	});*/
 
 	var $content = jQuery('.ajax_posts');
 	var $loader = jQuery('#more_posts');

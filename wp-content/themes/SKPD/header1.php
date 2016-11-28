@@ -30,35 +30,16 @@
       <div class="column">
         <div class="ui secondary menu page-nav">
           <div class="header item">
-            <img class="ui centered tiny image" src="<?php if(get_theme_mod( 'img-upload' )!=null || get_theme_mod( 'img-upload' ) != '') echo get_theme_mod( 'img-upload' ); else echo get_template_directory_uri().'/img/dki.png'; ?>"" alt="">
+            <img class="ui centered golo image" src="<?php if(get_theme_mod( 'img-upload' )!=null || get_theme_mod( 'img-upload' ) != '') echo get_theme_mod( 'img-upload' ); else echo get_template_directory_uri().'/img/dki.png'; ?>"" alt="">
             <div class="content">
               <a href="<?php echo site_url(); ?>">
-                <h3 class="ui header"><?php echo get_theme_mod( 'nick_title', 'your title' ); ?></h3>
+                <h2 class="ui header"><?php echo get_theme_mod( 'nick_title_abr', 'your title' ); ?></h2>
                 <p><?php echo get_theme_mod( 'nick_subtitle', 'your subtitle' ); ?></p>
               </a>
             </div>
           </div>
           <div class="right menu">
-            
-            <form action="<?php echo home_url( '/' ); ?>">
-              <div class="item search-ui">
-                <div class="ui fluid search">
-                  <div class="ui icon input">
-                    <input class="prompt" name="s" type="text" placeholder="Search...">
-                    <i class="search icon"></i>
-                  </div>
-                </div>
-              </div>
-            </form>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="ui menu menu-bar">
-    <div class="ui container">
-      <?php 
+            <?php 
               wp_nav_menu(array(
                 'menu'              => 'primary',
                 'theme_location'    => 'primary',
@@ -72,9 +53,31 @@
                 'walker'            => new walkah()
               ));
             ?>
+
+              
+            <form action="<?php echo home_url( '/' ); ?>">
+              <div class="item search-ui">
+                <div class="ui fluid search">
+                  <div class="ui icon input">
+                    <input class="prompt" name="s" type="text" placeholder="Search...">
+                    <i class="search icon"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+            
+            <a class="item search-btn">
+              <i class="search icon"></i>
+            </a>
+            <a class="item search-close">
+              <i class="remove icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-          
+
   <div class="ui vertical left sidebar accordion menu">
     <?php 
       wp_nav_menu(array(

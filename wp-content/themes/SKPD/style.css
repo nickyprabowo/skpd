@@ -71,18 +71,34 @@ ol li{
 }
 
 .main-menu{
-	background: #FFFFFF !important;
-	border-bottom: 1px solid rgba(34, 36, 38, 0.15);
-    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+	padding: 5px;
 }
 
 .main-menu .header{
 	margin-bottom:0rem;
 }
 
+.ui.menu.menu-bar{
+	border-radius: 0px !important;
+	margin: 0em;
+}
+
+.ui.menu .ui.dropdown.active .menu .item > a {
+    color: rgba(0, 0, 0, 0.95) !important;
+}
+
 .ui.menu{
 	font-family: 'OpenSans';
 	font-size: 14px;
+}
+
+.ui.secondary.menu li.item:hover, .ui.secondary.menu li.item:active{
+	background: rgba(0,0,0,.05);
+    color: rgba(0,0,0,.95);
+}
+
+.ui.menu .right.menu > form{
+	margin-top: 10%;
 }
 
 .mobile-nav{
@@ -110,6 +126,10 @@ ol li{
 	margin: 0.4em 0em 0.8em;
 }
 
+.main-menu .header .content a > h3{
+	width: 420px;
+}
+
 .header.item .content{
 	margin-left: 15px;
 }
@@ -117,9 +137,13 @@ ol li{
 .header.item .content p{
 	margin-top: 0;
 	letter-spacing: 1.5px;
+	color: #333333;
+	font-size: 18px;
+	margin-top: 6px;
+	font-family: 'OpenSans Bold';
 }
 
-.search-btn i, .search-close i, i.sidebar{
+/* .search-btn i, .search-close i, i.sidebar{
 	margin-right: 0em !important;
 }
 
@@ -134,7 +158,7 @@ ol li{
 
 .ui.menu:not(.vertical) .item.search-ui, .ui.menu:not(.vertical) .item.search-close{
 	display: none;
-}
+} */
 
 .ui.menu.item .drop{
 	padding: 0;
@@ -328,7 +352,7 @@ textarea{
 
 @media only screen and (max-width: 992px) {
 	
-	.main-menu {
+	.main-menu, .menu-bar {
         display: none !important;
     }
 
@@ -355,6 +379,10 @@ textarea{
 
 	.sidebar li a, .sidebar ul li a{
 		color: #000000;
+	}
+
+	.sidebar .ui.link.list{
+		margin-left: 0.5em;
 	}
 
 }

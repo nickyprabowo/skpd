@@ -1,7 +1,7 @@
 <div class="footer">
 	<div class="ui vertical segment active-footer">
 	   <div class="ui stackable grid container">
-	   		<div class="four wide column">
+	   		<div class="nine wide column">
 	   			<h4 class="foot-head">Link Terkait</h4>
 	   			<div class="items tautan">
 	   				<?php
@@ -19,16 +19,6 @@
 
 						<?php endwhile; ?>
 					<?php endif; ?>
-			  	</div>
-	   		</div>
-	   		<div class="four wide column">
-	   			<h4 class="foot-head">Bantuan</h4>
-	   			<div class="items tautan">
-
-					<div class="item">link</div>
-					<div class="item">link</div>
-					<div class="item">link</div>
-					<div class="item">link</div>
 			  	</div>
 	   		</div>
 	   		<div class="seven wide column">

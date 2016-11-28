@@ -46,7 +46,7 @@ class Sider extends Walker_Nav_Menu {
 	   $no_link = '';
 	   if ( $args->walker->has_children ){
 	   		$icon = "<a class=\"title\"><i class=\"dropdown icon\"></i>";
-	   		$item_output = $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after . $icon ."</a>";
+	   		$item_output = $args->link_before . $args->link_after . $icon . apply_filters( 'the_title', $item->title, $item->ID ). "</a>";
 	   }
 	   else
 	   {
