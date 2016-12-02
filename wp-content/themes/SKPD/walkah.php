@@ -74,7 +74,7 @@ class Walkah extends Walker_Nav_Menu {
 	   }
 	   else
 	   {
-	   		$class_names = 'class="ui teal item"';
+	   	   $class_names = 'class="ui teal item"';
 
 		   $item_output = $args->before;
 		   $item_output .= '<a'. $attributes .''. $class_names .'>';

@@ -25,7 +25,7 @@ if( count( $posts ) > 0 ) :  foreach( $posts as $post ) :
 		  		</div>
 		  	</div>
 		    <div class="content">
-		      <a class="header"><?php echo $title; ?></a>
+		      <a class="header" href="<?php echo $permalink; ?>""><?php echo $title; ?></a>
 		      <div class="meta">
 		        <span class="have-icon"><i class="marker icon"></i> <?php echo $address . ', ' . $city; ?></span>
 		      </div>

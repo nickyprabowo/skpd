@@ -11,13 +11,11 @@
 
               while ( have_posts() ) : the_post(); ?>
                 <article class="content">
-                  <div class="ui container">
                     <div class="single-post-title">
                       <div class="post-content">
                         <?php the_content(); ?>
                       </div>
                     </div>
-                  </div>
                 </article>
 
               <?php endwhile; ?> 

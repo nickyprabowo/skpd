@@ -3,12 +3,18 @@
 
     <?php if ( have_posts() ) : ?>
 
-      <?php while ( have_posts() ) : the_post(); ?>
+      <?php while ( have_posts() ) : the_post(); global $post;?>
 
-  
+      
     <div class="ui container">
-      <div class="white content">
-        <h1 class="ui header"><?php the_title(); ?></h1>
+      <div class="single-content">
+        <h1 class="ui header">
+          <?php the_title(); ?>
+          <div class="sub header">
+            <span><?php the_date(); ?></span>
+          </div>
+        </h1>
+        
         <div class="ui fluid featured image">
             <?php the_post_thumbnail('single-thumbnail'); ?>
         </div>

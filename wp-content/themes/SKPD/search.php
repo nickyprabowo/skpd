@@ -20,62 +20,59 @@
     </div>
   </div>
 
-<div class="page-content">
+  <div class="page-content">
     <div class="ui text container">
-        <div class="ui stackable grid two column">
-
+      <div class="ui stackable grid">
+        <div class="ui sixteen wide column">
+          <div class="ui very relaxed divided items">
+          <?php if ( have_posts() ) : ?>
             
-            <?php if ( have_posts() ) : ?>
-            
-                <?php
+            <?php while ( have_posts() ) : the_post(); ?>
 
-                while ( have_posts() ) : the_post(); ?>
-                    <div class="column">
-                      <div class="ui very relaxed items">
-                        <div class="item">
-                          <div class="ui tiny image event-date-bg">
-                            <div class="event-date">
-                              <p class="event-day"><?php echo get_the_date('d'); ?></p>
-                              <p class="event-month"><?php echo get_the_date('M'); ?></p>
-                            </div>
-                          </div>
-                          <div class="content">
-                            <a class="header" href="<?php echo get_the_permalink(); ?>"><?php the_title() ?></a>
-                            <div class="description">
-                              <p><?php echo the_excerpt_max_charlength(80); ?></p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                <?php endwhile; ?> 
               
-                <!-- <div class="ui buttons"> -->
+                <div class="item">
+                  <?php global $post; ?>
+                  <div class="content">
+                    <a class="header" href="<?php echo get_the_permalink(); ?>"><?php the_title() ?></a>
+                    <div class="meta">
+                      <span class="price"><?php the_date(); ?></span>
+                    </div>
+                    <div class="description">
+                      <p><?php echo excerpt(20); ?></p>
+                    </div>
+                    <div class="extra">
+                      <div class="ui label"><i class="comment icon"></i> <?php echo $post->comment_count;?></div>
+                    </div>
+                  </div>
+                </div>
+              
+
+            <?php endwhile; ?> 
+              
                 <!-- Add the pagination functions here. -->
-               <?php 
+              <?php 
 
-                  // wp_pagenavi(); 
-                  wp_reset_postdata();
+                // wp_pagenavi(); 
+                wp_reset_postdata();
 
-                ?>
-                <!-- </div> -->
+              ?>
           </div>
+        </div>
             
-          <div class="ui centered grid">
-            <div class="column">
-              <?php echo paginate_links(); ?>
-            </div>
+        <div class="ui centered grid">
+          <div class="column">
+            <?php echo paginate_links(); ?>
           </div>
+        </div>
 
-          <?php else : ?>
+        <?php else : ?>
 
-              <article class="post error">
-                  <h1 class="404">Maaf, konten yang Anda cari tidak tersedia</h1>
-              </article>
+            <article class="post error">
+                <h1 class="404">Maaf, konten yang Anda cari tidak tersedia</h1>
+            </article>
 
-          <?php endif; ?>
-
+        <?php endif; ?>
+      </div>
     </div>
   </div>
 

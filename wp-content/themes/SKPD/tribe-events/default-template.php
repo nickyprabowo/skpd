@@ -23,8 +23,8 @@ get_header();
 		<div class="ui centered grid">
 		  <div class="column">
 			<div class="large ui buttons basic" id="news-tab">
-			  <button class="ui button" data-tab="news"><?php echo __( 'News', 'naked' ) ?></button>
-			  <button class="ui button active" data-tab="events"><?php echo __( 'Events', 'naked' ) ?></button>
+			  <button class="ui button" data-tab="news"><?php echo __( 'Berita', 'naked' ) ?></button>
+			  <button class="ui button active" data-tab="events"><?php echo __( 'Acara', 'naked' ) ?></button>
 			</div>
 		  </div>
 		</div>

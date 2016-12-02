@@ -30,7 +30,7 @@
       <div class="column">
         <div class="ui secondary menu page-nav">
           <div class="header item">
-            <img class="ui centered tiny image" src="<?php if(get_theme_mod( 'img-upload' )!=null || get_theme_mod( 'img-upload' ) != '') echo get_theme_mod( 'img-upload' ); else echo get_template_directory_uri().'/img/dki.png'; ?>"" alt="">
+            <img class="ui centered golo image" src="<?php if(get_theme_mod( 'img-upload' )!=null || get_theme_mod( 'img-upload' ) != '') echo get_theme_mod( 'img-upload' ); else echo get_template_directory_uri().'/img/dki.png'; ?>"" alt="">
             <div class="content">
               <a href="<?php echo site_url(); ?>">
                 <h3 class="ui header"><?php echo get_theme_mod( 'nick_title', 'your title' ); ?></h3>
@@ -75,7 +75,7 @@
     </div>
   </div>
           
-  <div class="ui vertical left sidebar accordion menu">
+  <div class="ui vertical left sidebar styled accordion menu">
     <?php 
       wp_nav_menu(array(
         'menu'              => 'primary',

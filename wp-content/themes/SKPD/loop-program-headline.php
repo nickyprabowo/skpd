@@ -7,7 +7,7 @@
     
       while ( have_posts() ) : the_post(); ?>
 
-        <div class="flat card">
+        <a class="flat card" href="<?php the_permalink(); ?>">
           <div class="ui huge image">
             <?php 
               if ( has_post_thumbnail() ) {
@@ -15,7 +15,7 @@
               } ?>
           </div>
           <div class="content">
-            <div class="ui medium header"><?php the_title(); ?></div>
+            <div class="ui medium header" href="<?php the_permalink(); ?>""><?php the_title(); ?></div>
             <div class="meta">
               <?php 
 
@@ -30,10 +30,13 @@
           </div>
           <div class="extra content">
             <span class="right floated">
+              <div class="ui label"><i class="comment icon"></i> <?php echo $post->comment_count;?></div>
+            </span>
+            <span>
               <i class="calendar icon"></i> <?php the_time('d F Y'); ?>
             </span>
           </div>
-        </div>
+        </a>
 
     <?php endwhile; ?>
 

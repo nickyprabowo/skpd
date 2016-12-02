@@ -2,7 +2,7 @@
 	<div class="ui vertical segment active-footer">
 	   <div class="ui stackable grid container">
 	   		<div class="nine wide column">
-	   			<h4 class="foot-head">Link Terkait</h4>
+	   			<h4 class="foot-head">Tautan</h4>
 	   			<div class="items tautan">
 	   				<?php
 						$args = array(

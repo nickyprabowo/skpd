@@ -8,18 +8,22 @@ class Sider extends Walker_Nav_Menu {
    public function start_lvl( &$output, $depth = 0, $args = array() ) {
       $indent = str_repeat("\t", $depth);
       $output .= "\n$indent<div class=\"content\"><div class=\"ui link list\">";
+      global $stat;
+      $this->stat = true;
    }
 
    public function end_lvl( &$output, $depth = 0, $args = array() ) {
       $indent = str_repeat("\t", $depth);
       $output .= "$indent</div></div>\n";
+      global $stat;
+      $this->stat = false;
    }
 
    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
 	   if ( $args->walker->has_children ){
-	   		$output .= $indent . '<div class="item">';
+	   		$output .= $indent . '<div class="ui item">';
 	   	}
 	   	else
 	   	{

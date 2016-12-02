@@ -1,4 +1,4 @@
-<div class="ui grid container">
+
 	<div class="ui very relaxed items">
 	
 	<?php
@@ -28,7 +28,7 @@
 		  		</div>
 		  	</div>
 		    <div class="content">
-		      <a class="ui header"><?php echo $title; ?></a>
+		      <a class="ui header" href="<?php echo $permalink; ?>""><?php echo $title; ?></a>
 		      <div class="meta">
 		        <span class="have-icon"><i class="marker icon"></i> <?php echo $address . ', ' . $city; ?></span>
 		      </div>
@@ -41,4 +41,3 @@
 		<?php endforeach; ?>
 	<?php endif; ?>
 	</div>
-</div>

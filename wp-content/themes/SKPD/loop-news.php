@@ -1,10 +1,10 @@
-<div class="ui grid container">
+
 	<div class="ui relaxed items">
 	<?php if ( have_posts() ) : ?>
               
     <?php
   
-    	while ( have_posts() ) : the_post(); ?>
+    	while ( have_posts() ) : the_post(); global $post;?>
 
 		  <div class="item">
 		    <div class="ui custom-img image">
@@ -14,9 +14,12 @@
               } ?>
 		    </div>
 		    <div class="content">
-		      	<a class="ui medium header"><?php the_title(); ?></a>
+		      	<a class="ui medium header" href="<?php the_permalink(); ?>""><?php the_title(); ?></a>
 		      	<div class="meta">
 			        <span><i class="calendar icon"></i> <?php the_time('d F Y'); ?></span>
+			        <span>
+		              <i class="comment icon"></i> <?php echo $post->comment_count;?>
+		            </span>
 			    </div>
 		      	<div class="description">
 		        	<p><?php echo excerpt(20); ?></p>
@@ -35,4 +38,3 @@
 		<?php endwhile; ?>
 	<?php endif; ?>
 	</div>
-</div>

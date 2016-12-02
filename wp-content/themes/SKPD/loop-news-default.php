@@ -1,10 +1,14 @@
 <div class="ui stackable grid two column">
 
 	<?php 
+
+		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		$args = array(
 				'post_type' => 'berita',
-				'posts_per_page' => 6
+				'posts_per_page' => 2,
+				'paged' => $paged
 			);
+
 		$berita = new WP_Query($args);
 
 	?>
@@ -26,9 +30,12 @@
 		            ?>
 			    </div>
 			    <div class="content">
-			      	<a class="ui header"><?php the_title(); ?></a>
+			      	<a class="ui header" href="<?php the_permalink(); ?>""><?php the_title(); ?></a>
 			      	<div class="meta">
 				        <span><i class="calendar icon"></i> <?php the_time('d F Y'); ?></span>
+				        <span>
+			              <i class="comment icon"></i> <?php echo $post->comment_count;?>
+			            </span>
 				    </div>
 			      	<div class="description">
 			        	<p><?php echo excerpt(20); ?></p>
@@ -47,5 +54,18 @@
 		</div>
 
 		<?php endwhile; ?>
+
+		<!-- Add the pagination functions here. -->
+		  <div class="one column centered row">
+		  	<div class="column">
+		  		<?php 
+
+		          wp_pagenavi(array( 'query' => $berita )); 
+		          wp_reset_postdata();
+
+		        ?>
+		  	</div>
+		  </div>
+        
 	<?php endif; ?>
 </div>
