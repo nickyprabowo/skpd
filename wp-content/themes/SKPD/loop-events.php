@@ -29,9 +29,11 @@
 		  	</div>
 		    <div class="content">
 		      <a class="ui header" href="<?php echo $permalink; ?>""><?php echo $title; ?></a>
+		      <?php if(!empty($address)) : ?>
 		      <div class="meta">
 		        <span class="have-icon"><i class="marker icon"></i> <?php echo $address . ', ' . $city; ?></span>
 		      </div>
+		  	  <?php endif; ?>
 		      <div class="description">
 		        <p><?php echo $content; ?></p>
 		      </div>
