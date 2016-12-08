@@ -16,14 +16,6 @@
           </div>
           <div class="content">
             <div class="ui medium header" href="<?php the_permalink(); ?>""><?php the_title(); ?></div>
-            <div class="meta">
-              <?php 
-
-                global $post;
-                echo custom_taxonomies_terms_links($post->ID);
-
-               ?>
-            </div>
             <div class="description">
               <p><?php echo excerpt(20); ?></p>
             </div>

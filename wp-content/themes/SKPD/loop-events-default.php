@@ -15,7 +15,7 @@ if( count( $posts ) > 0 ) :  foreach( $posts as $post ) :
 	$city 		= tribe_get_city( $post->ID );
 ?>
 		
-	<div class="column">
+	<div class="eight wide column">
 		<div class="ui very relaxed items">
 		  <div class="item">
 		  	<div class="ui tiny image event-date-bg">

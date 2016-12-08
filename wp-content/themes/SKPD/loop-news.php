@@ -1,5 +1,5 @@
 
-	<div class="ui relaxed items">
+	<div class="ui items">
 	<?php if ( have_posts() ) : ?>
               
     <?php

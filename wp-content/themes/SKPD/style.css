@@ -169,6 +169,14 @@ ol li{
 	padding-bottom: 7px;
 }
 
+.ui.styled.accordion .item a{
+	color: rgba(0,0,0,.70);;
+}
+
+.ui.styled.accordion .item a:hover, .ui.styled.accordion .item a:active{
+	color: rgba(0,0,0,1);;
+}
+
 .golo{
 	width: 65px;
 }
@@ -192,6 +200,10 @@ ol li{
 	font-size: 18px;
 	margin-top: 6px;
 	font-family: 'Source Sans Semibold';
+}
+
+.header-margin{
+	margin-top: 30px;
 }
 
 /* .search-btn i, .search-close i, i.sidebar{
