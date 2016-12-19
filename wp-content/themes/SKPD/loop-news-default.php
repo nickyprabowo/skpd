@@ -56,7 +56,7 @@
 		<?php endwhile; ?>
 
 		<!-- Add the pagination functions here. -->
-		  <div class="one column centered row">
+		<div class="one column centered row">
 		  	<div class="column">
 		  		<?php 
 
@@ -65,7 +65,7 @@
 
 		        ?>
 		  	</div>
-		  </div>
+		</div>
         
 	<?php endif; ?>
 </div>

@@ -44,17 +44,13 @@ function bwp_template_redirect()
 
 
 // Register Custom Navigation Walker
-require_once('walkah.php');
-require_once('sider.php');
+require_once('walkah.php'); // this is for main navigation
+require_once('sider.php'); // this is for mobile navigation
 
 //image thumbnail
 add_theme_support( 'post-thumbnails' );
-add_image_size( 'gallery-thumbnail', 300, 150, true ); // 50 pixels wide by 50 pixels tall, crop mode
-add_image_size( 'slider-thumbnail', 500, 400, true );
-add_image_size( 'headline-thumbnail', 900, 235, true );
-add_image_size( 'secondary-headline', 450, 255, true );
+// feel free to add more thumbnail filter
 add_image_size( 'single-thumbnail', 1000, 400, true );
-add_image_size( 'taker-thumbnail', 400, 400, true );
 
 /**
  * Automatic featured image
@@ -87,26 +83,6 @@ add_action('draft_to_publish', 'autoset_featured');
 add_action('new_to_publish', 'autoset_featured');
 add_action('pending_to_publish', 'autoset_featured');
 add_action('future_to_publish', 'autoset_featured');
-
-/*-----------------------------------------------------------------------------------*/
-/* Activate sidebar for Wordpress use
-/*-----------------------------------------------------------------------------------*/
-function naked_register_sidebars() {
-	register_sidebar(array(				// Start a series of sidebars to register
-		'id' => 'sidebar', 					// Make an ID
-		'name' => 'Sidebar',				// Name it
-		'description' => 'Take it on the side...', // Dumb description for the admin side
-		'before_widget' => '<div>',	// What to display before each widget
-		'after_widget' => '</div>',	// What to display following each widget
-		'before_title' => '<h3 class="side-title">',	// What to display before each widget's title
-		'after_title' => '</h3>',		// What to display following each widget's title
-		'empty_title'=> '',					// What to display in the case of no title defined for a widget
-		// Copy and paste the lines above right here if you want to make another sidebar, 
-		// just change the values of id and name to another word/name
-	));
-} 
-// adding sidebars to Wordpress (these are created in functions.php)
-add_action( 'widgets_init', 'naked_register_sidebars' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Enqueue Styles and Scripts
@@ -181,59 +157,7 @@ function custom_taxonomies_terms_links($id) {
     return $out;
 }
 
-// LOAD MORE GALLERY
-add_action('wp_ajax_nopriv_mytheme_more_post_ajax', 'mytheme_more_post_ajax');
-add_action('wp_ajax_mytheme_more_post_ajax', 'mytheme_more_post_ajax');
- 
-if (!function_exists('mytheme_more_post_ajax')) {
-	function mytheme_more_post_ajax(){
- 
-	    $ppp     = (isset($_POST['ppp'])) ? $_POST['ppp'] : 4;
-	    $cat     = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
-	    $offset  = (isset($_POST['offset'])) ? $_POST['offset'] : 0;
-	    $exclude  = (isset($_POST['post_not_in'])) ? json_decode(stripslashes($_POST['post_not_in'])) : '';
-
-	    $args = array(
-	        'post_type'      => 'attachment',
-	        'post_mime_type' => 'image',
-          	'post_status' 	 => 'any',
-          	'post_mime_type' => 'image/jpeg,image/gif,image/jpg,image/png',
-	        'posts_per_page' => $ppp,
-	        'offset'         => $offset,
-	        'post__not_in'    => $exclude
-	    );
- 
-	    $images = get_posts($args);
- 
-	    $out = '';
- 
-	    if ($images) :
-	    	foreach ( $images as $attachment ) :
-
-	    		// define attributes for image display
-	            $imgattr = array(
-	                'alt'   => trim( strip_tags( get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ) ) ),
-	            ); 
-	            $image_title = $attachment->post_title;
-	            $caption = $attachment->post_excerpt;
-	            $description = $attachment->post_content;
-	            $attachment_page = wp_get_attachment_url( $attachment->ID );
-		    	
-				$out .= '<a class="ui card '. implode(' ', get_post_class()) .'" href="'.$attachment_page.'">
-							<div class="ui image">'.wp_get_attachment_image( $attachment->ID, 'gallery-thumbnail', $imgattr ).'';
-					
-				$out .= '</div></a>';
- 
-	    	endforeach;
-	    endif;
- 
-	    wp_reset_postdata();
- 
-	    wp_die($out);
-	}
-}
-
-// nick customizer
+// nick customizer is used in customization page
 function nick_customizer( $wp_customize ) {
 	// customizer build code
 	$wp_customize->add_section( 'general_section' , array(
@@ -383,6 +307,7 @@ function nick_customizer( $wp_customize ) {
 }
 add_action( 'customize_register', 'nick_customizer' );
 
+//applying changes in customization to actual pages
 function nick_customizer_head_styles() {
 	$header_color = get_theme_mod( 'header_color' ); 
 	$footer_color = get_theme_mod( 'footer_color' );
@@ -484,7 +409,7 @@ function replace_admin_menu_icons_css() {
 add_action( 'admin_head', 'replace_admin_menu_icons_css' );
 
 
-add_action( 'wp_ajax_nopriv_tim_event_ajax_pagination', 'vio_event_ajax_pagination' );
+/*add_action( 'wp_ajax_nopriv_tim_event_ajax_pagination', 'vio_event_ajax_pagination' );
 add_action( 'wp_ajax_vio_event_ajax_pagination', 'vio_event_ajax_pagination' );
 function vio_event_ajax_pagination() {
 
@@ -523,7 +448,7 @@ function vio_event_ajax_pagination() {
 	wp_reset_postdata();
 
     die();
-}
+}*/
 
 
 
