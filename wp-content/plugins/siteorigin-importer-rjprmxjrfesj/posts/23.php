@@ -1,0 +1,43 @@
+<?php
+return array (
+  'ID' => '23',
+  'post_author' => '3',
+  'post_date' => '2016-09-17 12:11:52',
+  'post_date_gmt' => '0000-00-00 00:00:00',
+  'post_content' => ' ',
+  'post_title' => '',
+  'post_excerpt' => '',
+  'post_status' => 'draft',
+  'comment_status' => 'closed',
+  'ping_status' => 'closed',
+  'post_password' => '',
+  'post_name' => '',
+  'to_ping' => '',
+  'pinged' => '',
+  'post_modified' => '2016-09-17 12:11:52',
+  'post_modified_gmt' => '0000-00-00 00:00:00',
+  'post_content_filtered' => '',
+  'post_parent' => '0',
+  'guid' => 'http://mono.packs.siteorigin.com/?p=23',
+  'menu_order' => '1',
+  'post_type' => 'nav_menu_item',
+  'post_mime_type' => '',
+  'comment_count' => '0',
+  'post_meta' => 
+  array (
+    '_menu_item_type' => 'post_type',
+    '_menu_item_menu_item_parent' => '0',
+    '_menu_item_object_id' => '2',
+    '_menu_item_object' => 'page',
+    '_menu_item_target' => '',
+    '_menu_item_classes' => 'a:1:{i:0;s:0:"";}',
+    '_menu_item_xfn' => '',
+    '_menu_item_url' => '',
+    '_menu_item_orphaned' => '1474114312',
+  ),
+  'author_login' => '',
+  'author_email' => '',
+  'terms' => 
+  array (
+  ),
+);
