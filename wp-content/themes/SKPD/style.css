@@ -1,0 +1,467 @@
+/*Theme Name: Universal SKPD
+
+Theme URI: Your theme's URL
+
+Description: Tema untuk SKPD Jakarta
+
+Version: 1.0 
+
+Author: Nicky
+
+*/
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('fonts/Open Sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans Semibold';
+    src: url('fonts/Open Sans/OpenSans-Semibold.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans Bold';
+    src: url('fonts/Open Sans/OpenSans-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather Light';
+    src: url('fonts/Merriweather/Merriweather-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('fonts/Merriweather/Merriweather-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather Bold';
+    src: url('fonts/Merriweather/Merriweather-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather Black';
+    src: url('fonts/Merriweather/Merriweather-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Source Sans Light';
+    src: url('fonts/SourceSans/SourceSansPro-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Source Sans Regular';
+    src: url('fonts/SourceSans/SourceSansPro-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Source Sans Semibold';
+    src: url('fonts/SourceSans/SourceSansPro-Semibold.ttf');
+}
+
+@font-face {
+    font-family: 'Source Sans Bold';
+    src: url('fonts/SourceSans/SourceSansPro-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Source Serif Regular';
+    src: url('fonts/Source Serif/SourceSerifPro-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Source Serif Semibold';
+    src: url('fonts/Source Serif/SourceSerifPro-Semibold.ttf');
+}
+
+@font-face {
+    font-family: 'Source Serif Bold';
+    src: url('fonts/Source Serif/SourceSerifPro-Semibold.ttf');
+}
+
+h1, h2, h3, h4, h5, h6, .ui.header, .ui.items>.item>.content>.header, .ui.cards>.card>.content>.header{
+	font-family: 'Source Sans Bold';
+}
+
+p{
+	letter-spacing: 0.3px;
+    line-height: 22px;
+}
+
+body{
+	font-family: 'Source Serif Regular';
+	font-size: 14px;
+	-webkit-transition: all 500ms ease-in-out;
+	color: #333333;
+}
+
+body.pushable{
+	background: #FFFFFF !important;
+}
+
+ol li{
+	margin-bottom: 10px;
+    line-height: 25px;
+}
+
+.main-menu{
+	padding: 5px;
+}
+
+.main-menu .header{
+	margin-bottom:0rem;
+}
+
+.ui.menu.menu-bar{
+	border-radius: 0px !important;
+	margin: 0em;
+}
+
+.ui.menu .ui.dropdown.active .menu .item > a {
+    color: rgba(0, 0, 0, 0.95) !important;
+}
+
+.ui.menu{
+	font-family: 'Source Sans Regular';
+	font-size: 15px;
+}
+
+.ui.secondary.menu li.item:hover, .ui.secondary.menu li.item:active{
+	background: rgba(0,0,0,.05);
+    color: rgba(0,0,0,.95);
+}
+
+.ui.menu .right.menu > form{
+	margin-top: 10%;
+}
+
+.mobile-nav{
+	display: none;
+	/* margin-bottom: 30px; */
+}
+
+.mobile-label{
+	margin-left: 0.6em;
+}
+
+.mobile-label .title{
+	margin-bottom: 0px;
+}
+
+.mobile-label .subtitle{
+	margin-top: 0px;
+}
+
+.toc.item i.icon{
+	margin-right: 0px !important;
+}
+
+.ui.link.list .item a.active{
+	color: rgba(0,0,0,.95);;
+}
+
+.ui.styled.accordion .title {
+	border-top: none;
+}
+
+.ui.styled.accordion .content{
+	padding-bottom: 7px;
+}
+
+.ui.styled.accordion .item a{
+	color: rgba(0,0,0,.70);;
+}
+
+.ui.styled.accordion .item a:hover, .ui.styled.accordion .item a:active{
+	color: rgba(0,0,0,1);;
+}
+
+.golo{
+	width: 65px;
+}
+
+.meta{
+	margin: 0.4em 0em 0.8em;
+}
+
+.main-menu .header .content a > h3{
+	width: 420px;
+}
+
+.header.item .content{
+	margin-left: 15px;
+}
+
+.header.item .content p{
+	/* margin-top: 0;
+	letter-spacing: 1.5px;
+	color: #333333;
+	font-size: 18px;
+	margin-top: 6px;
+	font-family: 'Source Sans Semibold'; */
+}
+
+.header-margin{
+	margin-top: 30px;
+}
+
+/* .search-btn i, .search-close i, i.sidebar{
+	margin-right: 0em !important;
+}
+
+.search-btn{
+	border-radius: 10px;
+}
+
+.search-close{
+	background: rgba(208, 33, 98,0.25) !important;
+	color: rgba(208, 33, 98,1) !important;
+}
+
+.ui.menu:not(.vertical) .item.search-ui, .ui.menu:not(.vertical) .item.search-close{
+	display: none;
+} */
+
+.ui.menu.item .drop{
+	padding: 0;
+}
+
+.pusher{
+	margin-bottom: 2em;
+}
+
+.ordi-page{
+	margin-top: 30px;
+}
+
+.event-date h3{
+	margin-top: 0;
+}
+
+.event-date{
+	padding: 20px 0px;
+	text-align: center;
+}
+
+.event-date-bg{
+	background: #ececec !important;
+}
+
+p.event-day{
+	font-size: 3rem;
+	font-weight: 700;
+	margin-bottom: 0.5em;
+}
+
+p.event-month{
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+/* nav tabs */
+
+.nav-tabs{
+	float: right;
+	border-bottom: none !important;
+	margin-top: 0 !important;
+}
+
+.nav-item{
+	clear: left;
+	font-size: 16px;
+}
+
+.nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-item.open .nav-link:hover, .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover{
+	border: none !important;
+}
+
+.nav-tabs .nav-link {
+	border: none !important;
+}
+
+.nav-tabs .nav-item+.nav-item{
+	margin-left:0 !important;
+}
+
+.tab-pane{
+	margin-right: 25em;
+}
+
+/* end of nav tabs */
+
+/* headline title for program */
+.headline-content{
+	color: #ffffff;
+	position: absolute;
+	right: 20;
+	left: 20;
+	bottom: 40;
+}
+
+/* image item */
+.custom-img{
+	width: 200px;
+	height: auto;
+}
+
+/* Program */
+
+.headline-program > .flat.card:first-child{
+	width: 60%;
+}
+
+.headline-program > .flat.card:first-child > .content{
+	position: absolute;
+    bottom: 10%;
+    width: 100%;
+    border-top: none;
+    color: #FFFFFF;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+}
+
+.headline-program > .flat.card:first-child > .content >.header, .headline-program > .flat.card:first-child > .content >.description{
+	color: #FFFFFF;
+}
+
+.headline-program > .flat.card:first-child > .extra.content{
+	position: absolute;
+	right: 0;
+}
+
+.headline-program > .flat.card:nth-child(2){
+	width: 35.1%;
+}
+
+/* Card */
+
+.ui.card, .ui.cards>.flat.card{
+	border-radius: 0;
+}
+
+.ui.cards>.flat.card>:first-child{
+	border-radius: 0 !important;
+}
+
+.ui.card>:first-child{
+	border-radius: 0 !important;
+}
+/* Form kontak */
+
+.so-widget-sow-contact-form-default-e42863c4ccf0 .sow-contact-form {
+	border: none !important;
+	background: #FFFFFF !important; 
+}
+
+.sow-field-container{
+	margin-bottom: 1em;
+}
+
+.sow-text-field{
+	padding: 0.5em;
+}
+
+textarea{
+	border-color: #dedede;
+	padding: 1em;
+}
+
+/* SINGLE CONTENT */
+.single-content{
+	margin: 2em 0em;
+	padding: 2em 0em;
+	border-bottom: 1px solid #ededed;
+}
+
+/* end of single content*/
+
+/* FOOTER */
+
+.footer{
+	font-family: 'Source Sans Regular';
+	border-top: 1px solid #e3e3e3;
+}
+
+.footer .ui.vertical.segment .widget-wrapper{
+	width: 100%; 
+}
+
+.footer .header h3{
+	text-transform: capitalize;
+	margin-bottom: 1em;
+}
+
+.footer p{
+	line-height: 27px;
+}
+
+.active-footer{
+	padding: 3em !important;
+}
+
+.footer .copy{
+	font-family: 'Source Sans Regular';
+	color: #9e9e9e;
+	font-size: 13px; 
+	letter-spacing: 0.5px;
+}
+
+.pulse {
+  -webkit-animation:pulse 1s infinite;
+}
+
+@media only screen and (max-width: 992px) {
+	
+	.main-menu, .menu-bar {
+        display: none !important;
+    }
+
+    .ui.hidden{
+		display: block;
+	}
+
+	.mobile-nav{
+		display: block;
+		border-bottom: 1px solid #d8d8d8;
+	}
+
+	.bordered {
+	    padding: 2em 0;
+	}
+
+	h1.title{
+		font-size: 1.1em;
+	}
+
+	.sidebar ul.menu{
+		padding-left: 20px;
+	}
+
+	.sidebar li a, .sidebar ul li a{
+		color: #000000;
+	}
+
+	.event-date{
+		padding: 20px;
+	}
+
+}
+
+/*
+* Vive Vio Permana
+ */
+.item .meta .have-icon {
+	display: inline-block;
+	position: relative;
+	padding-left: 20px;
+    line-height: 1.5em;
+}
+
+.item .meta .have-icon i.icon {
+	position: absolute;
+	left: 0;
+}
+
+.page-content {
+	padding: 30px 0;
+}
