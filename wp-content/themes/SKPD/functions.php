@@ -236,32 +236,6 @@ function nick_customizer( $wp_customize ) {
 	        )
 	    )
 	);
-
-	// GENERAL FONT SETTING
-	$wp_customize->add_setting('general_font',
-	array(
-        'default' => '',
-    ) );
-	
-	$wp_customize->add_control('general_font',
-	array(
-        'label' => 'Font Umum',
-        'section' => 'general_section',
-        'type' => 'text',
-    ) );
-
-    // GENERAL FONT SETTING
-	$wp_customize->add_setting('header_font',
-	array(
-        'default' => '',
-    ) );
-	
-	$wp_customize->add_control('header_font',
-	array(
-        'label' => 'Font pada Header',
-        'section' => 'general_section',
-        'type' => 'text',
-    ) );
 	
 	// ADD COLOR PICKER SETTING FOR HEADER BACKGROUND
 	$wp_customize->add_setting( 'header_color', array(

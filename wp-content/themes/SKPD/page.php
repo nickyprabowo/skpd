@@ -9,13 +9,8 @@
               <?php
 
               while ( have_posts() ) : the_post(); ?>
-                <article class="content">
-                    <div class="single-post-title">
-                      <div class="post-content">
-                        <?php the_content(); ?>
-                      </div>
-                    </div>
-                </article>
+
+                <?php the_content(); ?>
 
               <?php endwhile; ?> 
 
@@ -26,7 +21,6 @@
               </article>
 
           <?php endif; ?>
-
       </div>
     </div>
 
