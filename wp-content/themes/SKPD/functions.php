@@ -7,6 +7,8 @@
 // Define the version so we can easily replace it throughout the theme
 define( 'NAKED_VERSION', 1.0 );
 
+require_once 'helper/helper.php';
+
 /*-----------------------------------------------------------------------------------*/
 /*  Set the maximum allowed width for any content in the theme
 /*-----------------------------------------------------------------------------------*/
@@ -33,117 +35,17 @@ register_nav_menus(
 add_action(‘template_redirect’, ‘bwp_template_redirect’);
 function bwp_template_redirect()
 {
-if (is_author())
-{
-wp_redirect( home_url() ); exit;
+	if (is_author())
+	{
+		wp_redirect( home_url() ); exit;
+	}
 }
-}
+
+
 
 // Register Custom Navigation Walker
 require_once('walkah.php');
 require_once('sider.php');
-// require Search System
-require_once('wp-advanced-search/wpas.php');
-
-function demo_ajax_search() {
-    $args = array();
-    $args['wp_query'] = array( 'post_type' => 'attachment', 
-                               'orderby' => 'title', 
-                               'post_status' => 'any',
-                               'order' => 'ASC',
-                               'tax_query' => array(
-					                            array(
-					                              'taxonomy' => 'kategori_media',
-					                              'field'    => 'slug',
-					                              'terms'    => 'peraturan'
-					                            )
-					                          )
-                        );
-
-    $args['form'] = array( 
-
-    					'auto_submit' => true,
-    					'class'	=>	'ui form' 
-
-    					);
-
-    $args['form']['ajax'] = array( 'enabled' => true,
-                                   'show_default_results' => true,
-                                   'results_template' => 'template-ajax-results.php',
-                                   'button_text' => 'Load More Results',
-                                   'class' => 'jo'
-                                   );
-
-    $args['fields'][] = array( 'type' => 'search', 
-    						   'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'placeholder' => 'Masukkan Kata Kunci' );
-
-    /*$args['fields'][] = array( 'type' => 'post_type', 
-                               'format' => 'hidden', 
-                               'values' => array('media' => 'attachment') ,
-                               'default_all' => true
-                               );*/
-
-    /*$args['fields'][] = array( 'type' => 'taxonomy', 
-                               'format' => 'checkbox', 
-                               'pre_html' => '<div class="field" style="display:none;">',
-                          	   'post_html' => '</div>',
-                               'label' => 'Filter', 
-                               'taxonomy' => 'kategori_media',
-                               'term-format' => 'slug',
-                               'default' => 'peraturan'
-                               );*/
-
-    $args['fields'][] = array( 'type' => 'taxonomy', 
-                               'format' => 'select', 
-                               'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'label' => 'Kategori', 
-                               'taxonomy' => 'kategori_peraturan',
-                               'term-format' => 'slug',
-                               'default' => ''
-                               );
-
-    $args['fields'][] = array( 'type' => 'taxonomy', 
-                               'format' => 'select', 
-                               'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'label' => 'Tahun Terbit', 
-                               'taxonomy' => 'kategori_tahun',
-                               'term-format' => 'slug'
-                               );
-
-    $args['fields'][] = array( 'type' => 'orderby', 
-                               'format' => 'select', 
-                               'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'label' => 'Urutkan Berdasarkan', 
-                               'values' => array('title' => 'Judul', 'date' => 'Data Masuk') );
-
-    $args['fields'][] = array( 'type' => 'order', 
-                               'format' => 'radio',
-                               'label' => 'Pengurutan', 
-                               'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'values' => array('ASC' => 'ASC', 'DESC' => 'DESC'), 
-                               'default' => 'ASC' );
-
-    $args['fields'][] = array( 'type' => 'posts_per_page', 
-                               'format' => 'select', 
-                               'pre_html' => '<div class="field">',
-                          	   'post_html' => '</div>',
-                               'label' => 'Jumlah Pencarian', 
-                               'values' => array(2=>2, 5=>5, 10=>10), 
-                               'default' => 10 );
-
-    $args['fields'][] = array( 'type' => 'reset',
-                               'class' => 'ui fluid button',
-                               'value' => 'Reset' );
-
-    register_wpas_form('myform', $args);
-}
-add_action('init', 'demo_ajax_search');
 
 //image thumbnail
 add_theme_support( 'post-thumbnails' );
@@ -174,7 +76,7 @@ add_image_size( 'taker-thumbnail', 400, 400, true );
           else 
           {
 
-            set_post_thumbnail($post->ID, '226');
+            set_post_thumbnail($post->ID, '95');
 
           }
       }
@@ -212,9 +114,10 @@ add_action( 'widgets_init', 'naked_register_sidebars' );
 
 function naked_scripts()  { 
 
+	global $wp_query;
+
 	// Stylesheet
 	wp_enqueue_style('semantic-css', get_stylesheet_directory_uri() . '/css/semantic.min.css');
-	/*wp_enqueue_style('Roboto', 'https://fonts.googleapis.com/css?family=Roboto');*/
 	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 
 	// Javascripts
@@ -234,7 +137,9 @@ function naked_scripts()  {
 		'collapse' => __( 'collapse child menu', 'kelurahan' ),
 		'ajaxurl'  => $ajaxurl,
 		'noposts'  => esc_html__('No older posts found', 'kelurahan'),
-		'loadmore' => esc_html__('Load more', 'kelurahan')
+		'loadmore' => esc_html__('Load more', 'kelurahan'),
+		'queryVars' => json_encode( $wp_query->query ),
+		'timNonce'	=> wp_create_nonce('timNonceWp' )
 	) );
   
 }
@@ -261,18 +166,18 @@ function custom_taxonomies_terms_links($id) {
     $post_type = $post->post_type;
     // get post type taxonomies
     $taxonomies = get_object_taxonomies($post_type);
-    $out = "";
+    $out = '';
     foreach ($taxonomies as $taxonomy) {        
         $out .= "";
         // get the terms related to post
         $terms = get_the_terms( $post->ID, $taxonomy );
         if ( !empty( $terms ) ) {
             foreach ( $terms as $term )
-                $out .= '<i class="mini circle icon"></i><a class="cat" href="' .get_term_link($term->slug, $taxonomy) .'">'.$term->name.'</a> ';
+                $out .= '<a class="cat ui label" href="' .get_term_link($term->slug, $taxonomy) .'"><i class="tag icon"></i> '.$term->name.'</a> ';
         }
         $out .= "";
     }
-    $out .= "</i>";
+    $out .= "";
     return $out;
 }
 
@@ -354,7 +259,7 @@ function nick_customizer( $wp_customize ) {
 	// SITE TITLE SETTING
 	$wp_customize->add_setting('nick_title',
 	array(
-        'default' => 'Kelurahan di Jakarta',
+        'default' => 'SKPD di Jakarta',
     ) );
 	
 	$wp_customize->add_control('nick_title',
@@ -365,10 +270,24 @@ function nick_customizer( $wp_customize ) {
     ) );
 	// END OF SITE TITLE SETTING
 
+	// SITE TITLE SETTING
+	$wp_customize->add_setting('nick_title_abr',
+	array(
+        'default' => 'YNWA',
+    ) );
+	
+	$wp_customize->add_control('nick_title_abr',
+	array(
+        'label' => 'Judul Singkatan',
+        'section' => 'general_section',
+        'type' => 'text',
+    ) );
+	// END OF SITE TITLE SETTING
+
 	// SITE SUBTITLE SETTING
 	$wp_customize->add_setting('nick_subtitle',
 	array(
-        'default' => 'Kelurahan',
+        'default' => 'Jakarta',
     ) );
 	
 	$wp_customize->add_control('nick_subtitle',
@@ -563,6 +482,48 @@ function replace_admin_menu_icons_css() {
 }
 
 add_action( 'admin_head', 'replace_admin_menu_icons_css' );
+
+
+add_action( 'wp_ajax_nopriv_tim_event_ajax_pagination', 'vio_event_ajax_pagination' );
+add_action( 'wp_ajax_vio_event_ajax_pagination', 'vio_event_ajax_pagination' );
+function vio_event_ajax_pagination() {
+
+	check_ajax_referer( 'timNonceWp', 'nonce' );
+
+    $query_vars['paged'] 			= (int)$_POST['page'];
+    $query_vars['posts_per_page'] 	= get_option( 'posts_per_page' );
+    $query_vars['post_status'] 	= 'publish';
+    $query_vars['s'] 			= esc_sql( $_POST['extraQuery']['s'] );
+
+	$query_month = esc_sql( $_POST['extraQuery']['m']  );
+	if( ! empty( $query_month ) && $query_month != '-' ) {
+
+
+	    // $year 		= esc_sql( $_POST['extraQuery']['year'] );
+	    $year 		= date('Y');
+		$start_date = $year . '-' . $query_month;
+
+		$date = new DateTime( $start_date . "-01");
+		$date->add( new DateInterval("P1M") );
+		
+		$end_date = $date->format('Y-m');;
+		$query_vars['start_date'] = $start_date;
+		$query_vars['end_date'] = $end_date;
+
+	}
+
+	$posts = tribe_get_events( $query_vars );
+    if( count( $posts ) <= 0 ) { 
+    	echo '-1';
+    } else {
+    	set_query_var( 'posts', $posts );
+    	get_template_part('loop', 'events-default' );
+    }
+	
+	wp_reset_postdata();
+
+    die();
+}
 
 
 

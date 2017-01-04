@@ -100,4 +100,48 @@ jQuery(document)
 		return false;
 	}
 
+
+	// TAB MENU FOR EVENT AND NEWS
+	jQuery('#news-tab .button').tab();
+
+	jQuery(document).on('click', 'a#event-next-page', function ( e ) {
+                
+        var button              = jQuery( this ),
+            paged               = parseInt( button.attr('data-page') ),
+            formData            = jQuery('#tim-event-search').serializeArray();
+
+        if( button.hasClass('tim__load') ) return false;
+        button.addClass('loading');
+
+        jQuery.ajax({
+            url: screenReaderText.ajaxurl,
+            type: 'post',
+            data: {
+                action: 'vio_event_ajax_pagination',
+                queryVars: screenReaderText.queryVars,
+                extraQuery: {
+                    'm' : formData[0].value,
+                    's' : formData[1].value,
+                },
+                page: paged,
+                nonce: screenReaderText.timNonce
+            },
+            success: function( result ) {
+
+                if( result == '-1' ) {
+                    button.hide('fast').remove();
+                } else {
+
+                    paged++;
+                    button.attr('data-page', paged);
+                    jQuery('#event-list').append( result );
+                }
+                
+                button.removeClass('loading');
+            }
+        })
+
+        e.preventDefault();
+    }); 
+
   });

@@ -26,6 +26,11 @@ Author: Nicky
 }
 
 @font-face {
+    font-family: 'Merriweather Light';
+    src: url('fonts/Merriweather/Merriweather-Light.ttf');
+}
+
+@font-face {
     font-family: 'Merriweather';
     src: url('fonts/Merriweather/Merriweather-Regular.ttf');
 }
@@ -44,19 +49,20 @@ h1, h2, h3, h4, h5, h6{
 	font-family: 'OpenSans Bold';
 }
 
+p{
+	letter-spacing: 0.7px;
+    line-height: 21px;
+}
+
 body{
-	font-family: 'Merriweather';
+	font-family: 'Merriweather Light';
+	font-size: 13px;
 	-webkit-transition: all 500ms ease-in-out;
 	color: #333333;
 }
 
 body.pushable{
 	background: #FFFFFF !important;
-}
-
-
-a, p, .dropdown {
-	font-family: 'OpenSans', sans-serif;
 }
 
 ol li{
@@ -70,8 +76,14 @@ ol li{
     box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
 }
 
+.ui.menu{
+	font-family: 'OpenSans';
+	font-size: 14px;
+}
+
 .mobile-nav{
 	display: none;
+	margin-bottom: 30px;
 }
 
 .mobile-label{
@@ -90,6 +102,19 @@ ol li{
 	width: 55px;
 }
 
+.meta{
+	margin: 0.4em 0em 0.8em;
+}
+
+.header.item .content{
+	margin-left: 15px;
+}
+
+.header.item .content p{
+	margin-top: 0;
+	letter-spacing: 1.5px;
+}
+
 .search-btn i, .search-close i, i.sidebar{
 	margin-right: 0em !important;
 }
@@ -99,8 +124,8 @@ ol li{
 }
 
 .search-close{
-	/* background: rgba(33,133,208,0.25) !important;
-	color: rgba(33,133,208,1) !important; */
+	background: rgba(208, 33, 98,0.25) !important;
+	color: rgba(208, 33, 98,1) !important;
 }
 
 .ui.menu:not(.vertical) .item.search-ui, .ui.menu:not(.vertical) .item.search-close{
@@ -124,7 +149,7 @@ ol li{
 }
 
 .event-date{
-	padding: 10px 0px;
+	padding: 20px 0px;
 	text-align: center;
 }
 
@@ -134,8 +159,8 @@ ol li{
 
 p.event-day{
 	font-size: 3rem;
-	margin-bottom: 0;
 	font-weight: 700;
+	margin-bottom: 0.5em;
 }
 
 p.event-month{
@@ -153,6 +178,7 @@ p.event-month{
 
 .nav-item{
 	clear: left;
+	font-size: 16px;
 }
 
 .nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-item.open .nav-link:hover, .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover{
@@ -167,8 +193,62 @@ p.event-month{
 	margin-left:0 !important;
 }
 
+.tab-pane{
+	margin-right: 25em;
+}
+
 /* end of nav tabs */
 
+/* headline title for program */
+.headline-content{
+	color: #ffffff;
+	position: absolute;
+	right: 20;
+	left: 20;
+	bottom: 40;
+}
+
+/* image item */
+.custom-img{
+	width: 200px;
+	height: auto;
+}
+
+/* Program */
+
+.headline-program > .flat.card:first-child{
+	width: 60%;
+}
+
+.headline-program > .flat.card:first-child > .content{
+	position: absolute;
+    bottom: 10%;
+    width: 100%;
+    border-top: none;
+}
+
+.headline-program > .flat.card:first-child > .extra.content{
+	position: absolute;
+	right: 0;
+}
+
+.headline-program > .flat.card:nth-child(2){
+	width: 35.1%;
+}
+
+/* Card */
+
+.ui.card, .ui.cards>.flat.card{
+	border-radius: 0;
+}
+
+.ui.cards>.flat.card>:first-child{
+	border-radius: 0 !important;
+}
+
+.ui.card>:first-child{
+	border-radius: 0 !important;
+}
 /* Form kontak */
 
 .so-widget-sow-contact-form-default-e42863c4ccf0 .sow-contact-form {
@@ -186,15 +266,30 @@ p.event-month{
 
 textarea{
 	border-color: #dedede;
+	padding: 1em;
 }
 
 /* end of form kontak*/
 
 .footer{
-	
+	border-top: 1px solid #e3e3e3;
+}
+
+.footer .header h3{
+	text-transform: uppercase;
+}
+
+.active-footer{
+	padding: 3em !important;
+}
+
+.items.tautan .item{
+	margin-bottom: 1em;
+	font-size: 12px;
 }
 
 .footer .copy{
+	font-family: 'OpenSans';
 	color: #9e9e9e;
 	font-size: 13px; 
 	letter-spacing: 0.5px;
@@ -235,4 +330,23 @@ textarea{
 		color: #000000;
 	}
 
+}
+
+/*
+* Vive Vio Permana
+ */
+.item .meta .have-icon {
+	display: inline-block;
+	position: relative;
+	padding-left: 20px;
+    line-height: 1.5em;
+}
+
+.item .meta .have-icon i.icon {
+	position: absolute;
+	left: 0;
+}
+
+.page-content {
+	padding: 30px 0;
 }

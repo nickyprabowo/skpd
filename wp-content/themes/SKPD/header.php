@@ -25,14 +25,18 @@
 
 <body <?php body_class(); ?>>
   
-
-
   <div class="main-menu">
     <div class="ui grid container">
       <div class="column">
         <div class="ui secondary menu page-nav">
           <div class="header item">
-            <img class="ui centered golo image" src="<?php echo get_template_directory_uri().'/img/dki.png'; ?>" alt="">
+            <img class="ui centered golo image" src="<?php if(get_theme_mod( 'img-upload' )!=null || get_theme_mod( 'img-upload' ) != '') echo get_theme_mod( 'img-upload' ); else echo get_template_directory_uri().'/img/dki.png'; ?>"" alt="">
+            <div class="content">
+              <a href="<?php echo site_url(); ?>">
+                <div class="ui sub header"><h2><?php echo get_theme_mod( 'nick_title_abr', 'your title' ); ?></h2></div>
+                <p><?php echo get_theme_mod( 'nick_subtitle', 'your subtitle' ); ?></p>
+              </a>
+            </div>
           </div>
           <div class="right menu">
             <?php 
@@ -49,8 +53,7 @@
                 'walker'            => new walkah()
               ));
             ?>
-            <a class="item prime">Berita</a>
-            <div class="ui dropdown item prime" tabindex="0">
+            <!-- <div class="ui dropdown item prime" tabindex="0">
               Dropdown
               <i class="dropdown icon"></i>
               <div class="menu transition hidden" tabindex="-1">
@@ -62,15 +65,19 @@
                 <div class="divider"></div>
                 <div class="item">One more separated link</div>
               </div>
-            </div>
-            <div class="item search-ui">
-              <div class="ui fluid search">
-                <div class="ui icon input">
-                  <input class="prompt" type="text" placeholder="Search...">
-                  <i class="search icon"></i>
+            </div> -->
+              
+            <form action="<?php echo home_url( '/' ); ?>">
+              <div class="item search-ui">
+                <div class="ui fluid search">
+                  <div class="ui icon input">
+                    <input class="prompt" name="s" type="text" placeholder="Search...">
+                    <i class="search icon"></i>
+                  </div>
                 </div>
               </div>
-            </div>
+            </form>
+            
             <a class="item search-btn">
               <i class="search icon"></i>
             </a>
@@ -84,8 +91,20 @@
   </div>
 
   <div class="ui vertical left sidebar accordion menu">
-    <a class="item">Link 1</a>
-    <a class="item">Link 2</a>
+    <?php 
+      wp_nav_menu(array(
+        'menu'              => 'primary',
+        'theme_location'    => 'primary',
+        'depth'             => 3,
+        'container'         => '',
+        'container_id'      => '',
+        'container_class'   => '',
+        'menu_class'        => '',
+        'fallback_cb'       => '',
+        'items_wrap'        => '%3$s',
+        'walker'            => new walkah()
+      ));
+    ?>
     <div class="item">
       <a class="active title">
         <i class="dropdown icon"></i>
@@ -129,11 +148,11 @@
         <div class="ui large secondary menu">
           <div class="item head">
             <div class="ui logo image">
-              <img class="ui mini image" src="<?php echo get_template_directory_uri().'/img/dki.png'; ?>" alt="">
+              <img class="ui mini image" src="<?php if(get_theme_mod( 'img-upload' )!=null || get_theme_mod( 'img-upload' ) != '') echo get_theme_mod( 'img-upload' ); else echo get_template_directory_uri().'/img/dki.png'; ?>"" alt="">
             </div>
             <div class="mobile-label">
-              <h3 class="title">BPMPKB</h3>
-              <h5 class="subtitle">DKI JAKARTA</h5>
+              <h3 class="title"><?php echo get_theme_mod( 'nick_title_abr', 'your abbreviation title' ); ?></h3>
+              <h5 class="subtitle"><?php echo get_theme_mod( 'nick_subtitle', 'your subtitle' ); ?></h5>
             </div>
           </div>
           <div class="right item">

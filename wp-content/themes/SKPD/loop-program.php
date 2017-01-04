@@ -1,88 +1,45 @@
 <div class="ui grid container">
-  <!-- <?php if ( have_posts() ) : ?>
-              
+  <?php if ( have_posts() ) : ?>
+  <div class="ui link three stackable fluid cards">            
     <?php
   
-    while ( have_posts() ) : the_post(); ?>   -->
+    while ( have_posts() ) : the_post(); ?>
 
-      <div class="ui link three stackable fluid cards">
-        <div class="card">
-          <div class="image">
-            <img src="<?php echo bloginfo('template_directory'); ?>/img/pic1.jpg">
+        <div class="flat card">
+          <div class="ui massive image">
+            <?php 
+              if ( has_post_thumbnail() ) {
+                the_post_thumbnail();
+              } ?>
           </div>
           <div class="content">
-            <div class="header">Matt Giampietro</div>
+            <div class="header"><?php the_title(); ?></div>
             <div class="meta">
-              <a>Friends</a>
-            </div>
-            <div class="description">
-              Matthew is an interior designer living in New York.
-            </div>
-          </div>
-          <div class="extra content">
-            <span class="right floated">
-              Joined in 2013
-            </span>
-            <span>
-              <i class="user icon"></i>
-              75 Friends
-            </span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img src="<?php echo bloginfo('template_directory'); ?>/img/pic2.jpg">
-          </div>
-          <div class="content">
-            <div class="header">Molly</div>
-            <div class="meta">
-              <span class="date">Coworker</span>
-            </div>
-            <div class="description">
-              Molly is a personal assistant living in Paris.
-            </div>
-          </div>
-          <div class="extra content">
-            <span class="right floated">
-              Joined in 2011
-            </span>
-            <span>
-              <i class="user icon"></i>
-              35 Friends
-            </span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img src="<?php echo bloginfo('template_directory'); ?>/img/pic3.jpg">
-          </div>
-          <div class="content">
-            <div class="header">Elyse</div>
-            <div class="meta">
-              <a>Coworker</a>
-            </div>
-            <div class="description">
-              Elyse is a copywriter working in New York.
-            </div>
-          </div>
-          <div class="extra content">
-            <span class="right floated">
-              Joined in 2014
-            </span>
-            <span>
-              <i class="user icon"></i>
-              151 Friends
-            </span>
-          </div>
-        </div>
-      </div>  
+              <?php 
 
-      <!-- <?php endwhile; ?>
-      
-            <?php else : ?> -->
+                global $post;
+                echo custom_taxonomies_terms_links($post->ID);
+
+               ?>
+            </div>
+            <div class="description">
+              <p><?php echo excerpt(20); ?></p>
+            </div>
+          </div>
+          <div class="extra content">
+            <span class="right floated">
+              <i class="calendar icon"></i> <?php the_time('d F Y'); ?>
+            </span>
+          </div>
+        </div>
+        
+
+      <?php endwhile; ?>
+      </div>
+          <?php else : ?>
 
       <p><?php _e('Sorry, no images available'); ?></p>
 
-    <!-- <?php endif; ?> -->
+      <?php endif; ?>
       
   </div>
