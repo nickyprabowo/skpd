@@ -8,6 +8,8 @@
 define( 'NAKED_VERSION', 1.0 );
 
 require_once 'helper/helper.php';
+// activate extended naming for github updater to avoid conflict with Wordpress.org
+define( 'GITHUB_UPDATER_EXTENDED_NAMING', true );
 
 /*-----------------------------------------------------------------------------------*/
 /*  Set the maximum allowed width for any content in the theme
@@ -289,6 +291,7 @@ function nick_customizer_head_styles() {
 	$font_color_footer = get_theme_mod( 'font_footer_color' );
 	$font_link_color_footer = get_theme_mod( 'font_footer_link_color' );
 	
+	// execute changes in header background
 	if ( $header_color != '#0C2039' ) :
 	?>
 		<style type="text/css">
@@ -300,6 +303,7 @@ function nick_customizer_head_styles() {
 	<?php
 	endif;
 	
+	// execute changes in font color in header
 	if ( $font_color_header != '#333333' ) :
 	?>
 		<style type="text/css">			
@@ -322,7 +326,7 @@ function nick_customizer_head_styles() {
 	<?php
 	endif;
 
-	// Customizable link color in footer	
+	// execute changes in link color in footer	
 	if ( $font_link_color_footer != '#1C98E3' ) :
 	?>
 		<style type="text/css">			

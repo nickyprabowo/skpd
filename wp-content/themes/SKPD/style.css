@@ -2,9 +2,11 @@
 
 Theme URI: Your theme's URL
 
+GitHub Theme URI: https://github.com/nickyprabowo/skpd
+
 Description: Tema untuk SKPD Jakarta
 
-Version: 1.0 
+Version: 1.1 
 
 Author: Nicky
 
@@ -277,6 +279,8 @@ p.event-month{
 	font-size: 16px;
 }
 
+/************* TABS ***************/
+
 .left-tab .nav-item, .right-tab .nav-item{
 	clear: left;
 }
@@ -319,19 +323,6 @@ p.event-month{
 	height: auto;
 }
 
-/* Card */
-
-.ui.card, .ui.cards>.flat.card{
-	/* border-radius: 0; */
-}
-
-.ui.cards>.flat.card>:first-child{
-	/* border-radius: 0 !important; */
-}
-
-.ui.card>:first-child{
-	/* border-radius: 0 !important; */
-}
 /* Form kontak */
 
 .so-widget-sow-contact-form-default-e42863c4ccf0 .sow-contact-form {
@@ -353,6 +344,7 @@ textarea{
 }
 
 /* SINGLE CONTENT */
+
 .single-content{
 	margin: 2em 0em;
 	padding: 2em 0em;
