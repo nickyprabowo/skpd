@@ -3,6 +3,7 @@
  * @author Vive Vio Permana <vive.permana@gmail.com>
  *
  * This file is inital or setter and getter for plugin uniyson
+ * You can read unyson documentation here http://manual.unyson.io/en/latest/options/integrate.html#content
  * 
  */
 

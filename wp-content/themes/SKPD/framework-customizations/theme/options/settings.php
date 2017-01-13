@@ -1,8 +1,11 @@
 <?php
+/**
+ * You can read unyson documentation here http://manual.unyson.io/en/latest/options/built-in/introduction.html#content
+ */
+
 
 // check if unyson framework has defined/installed
 if ( ! defined('FW') )	die();
-
 
 $options = array(
 
@@ -30,9 +33,9 @@ $options = array(
 	        ),
 	        'header_2' => array(
 	            // (required) url for thumbnail
-	            'small' => get_template_directory_uri() .'/framework-customizations/images/header-1-small.png',
+	            'small' => get_template_directory_uri() .'/framework-customizations/images/header-2-small.png',
 	            // (optional) url for large image that will appear in tooltip
-	            'large' => get_template_directory_uri() .'/framework-customizations/images/header-1.png',
+	            'large' => get_template_directory_uri() .'/framework-customizations/images/header-2.png',
 	        ),
 	        
 	    ),
