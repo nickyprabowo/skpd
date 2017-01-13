@@ -7,7 +7,7 @@
             <div class="content">
               <a href="<?php echo site_url(); ?>">
                 <h3 class="ui header"><?php echo get_theme_mod( 'nick_title', 'your title' ); ?></h3>
-                <p class="sub header"><?php echo get_theme_mod( 'nick_city', 'your city' ); ?></p>
+                <p><?php echo get_theme_mod( 'nick_city', 'your city' ); ?></p>
               </a>
             </div>
           </div>

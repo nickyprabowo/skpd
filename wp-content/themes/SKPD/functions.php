@@ -11,6 +11,14 @@ require_once 'helper/helper.php';
 // activate extended naming for github updater to avoid conflict with Wordpress.org
 define( 'GITHUB_UPDATER_EXTENDED_NAMING', true );
 
+
+/*-----------------------------------------------------------------------------------*/
+/* Add Uniyson init(setter and getter options) file. You can found unison configuration file in folder framework-customizations
+/*-----------------------------------------------------------------------------------*/
+require_once 'framework-customizations/theme-functions.php';
+
+
+
 /*-----------------------------------------------------------------------------------*/
 /*  Set the maximum allowed width for any content in the theme
 /*-----------------------------------------------------------------------------------*/
