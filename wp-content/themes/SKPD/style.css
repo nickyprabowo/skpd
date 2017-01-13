@@ -195,13 +195,8 @@ ol li{
 	margin-left: 15px;
 }
 
-.header.item .content p{
-	/* margin-top: 0;
-	letter-spacing: 1.5px;
-	color: #333333;
-	font-size: 18px;
-	margin-top: 6px;
-	font-family: 'Source Sans Semibold'; */
+.header.item .content a h3, .header.item .content a p{
+	color: #000;
 }
 
 .header-margin{

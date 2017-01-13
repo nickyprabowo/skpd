@@ -176,11 +176,6 @@ function nick_customizer( $wp_customize ) {
 		'title'      => __( 'Body', 'nick' ),
 		'priority'   => 210,
 	) );
-	
-	$wp_customize->add_section( 'footer_section' , array(
-		'title'      => __( 'Footer', 'nick' ),
-		'priority'   => 220,
-	) );
 
 	// SITE TITLE SETTING
 	$wp_customize->add_setting('nick_title',
@@ -251,32 +246,58 @@ function nick_customizer( $wp_customize ) {
 		) ) 
 	);
 	// END OF COLOR PICKER
-	
+
 	// FONT COLOR SETTING IN HEADER
 	$wp_customize->add_setting( 'font_header_color', array(
-		'default' => '#333333'
+		'default' => '#000000'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'font_header_color', array(
-		'label' => 'Font Color',
+		'label' => 'Font Header Color',
 		'section' => 'header_section',
 		'settings' => 'font_header_color',
 		) ) 
 	);
 	// END OF FONT SETTING
-	
-	// FONT LINK SETTING IN FOOTER
-	$wp_customize->add_setting( 'font_footer_link_color', array(
-		'default' => '#1C98E3'
+
+	// ADD COLOR PICKER SETTING FOR NAVBAR BACKGROUND
+	$wp_customize->add_setting( 'navbar_color', array(
+		'default' => '#FFFFFF'
 	) );
 	
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'font_footer_link_color', array(
-		'label' => 'Font Link Color',
-		'section' => 'footer_section',
-		'settings' => 'font_footer_link_color',
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_color', array(
+		'label' => 'Navbar Background Color',
+		'section' => 'header_section',
+		'settings' => 'navbar_color',
 		) ) 
 	);
-	// END OF FONT LINK SETTING
+	// END OF COLOR PICKER
+	
+	// NAVBAR FONT COLOR SETTING IN HEADER
+	$wp_customize->add_setting( 'font_navbar_color', array(
+		'default' => '#333333'
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'font_navbar_color', array(
+		'label' => 'Font Navbar Color',
+		'section' => 'header_section',
+		'settings' => 'font_navbar_color',
+		) ) 
+	);
+	// END OF FONT SETTING
+
+	// NAVBAR LINK COLOR SETTING IN HEADER
+	$wp_customize->add_setting( 'font_navbar_link_color', array(
+		'default' => '#333333'
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'font_navbar_link_color', array(
+		'label' => 'Navbar Link Color',
+		'section' => 'header_section',
+		'settings' => 'font_navbar_link_color',
+		) ) 
+	);
+	// END OF FONT SETTING
 
 	$wp_customize->remove_section( 'title_tagline' );
 	$wp_customize->remove_section( 'static_front_page' );
@@ -286,52 +307,56 @@ add_action( 'customize_register', 'nick_customizer' );
 //applying changes in customization to actual pages
 function nick_customizer_head_styles() {
 	$header_color = get_theme_mod( 'header_color' ); 
+	$navbar_color = get_theme_mod( 'navbar_color' ); 
 	$footer_color = get_theme_mod( 'footer_color' );
-	$font_color_header = get_theme_mod( 'font_header_color' );
-	$font_color_footer = get_theme_mod( 'font_footer_color' );
-	$font_link_color_footer = get_theme_mod( 'font_footer_link_color' );
+	$font_header_color = get_theme_mod( 'font_header_color' );
+	$font_navbar_color = get_theme_mod( 'font_navbar_color' );
+	$font_navbar_link_color = get_theme_mod( 'font_navbar_link_color' );
+	$font_footer_color = get_theme_mod( 'font_footer_color' );
+	$font_footer_link_color = get_theme_mod( 'font_footer_link_color' );
 	
 	// execute changes in header background
-	if ( $header_color != '#0C2039' ) :
+	if ( $header_color != '#FFFFFF' ) :
 	?>
 		<style type="text/css">
 			/* HEADER */
-			.navbar-ct-info {
+			.main-menu {
 				background-color: <?php echo $header_color; ?> !important;
+			}
+		</style>
+	<?php
+	endif;
+
+	// execute changes in navbar background
+	if ( $navbar_color != '#FFFFFF' ) :
+	?>
+		<style type="text/css">
+			/* NAVBAR */
+			.menu-bar {
+				background-color: <?php echo $navbar_color; ?> !important;
 			}
 		</style>
 	<?php
 	endif;
 	
 	// execute changes in font color in header
-	if ( $font_color_header != '#333333' ) :
+	if ( $font_header_color != '#333333' ) :
 	?>
 		<style type="text/css">			
-			.head a {
-				color: <?php echo $font_color_header; ?>;
+			.header.item .content h3, .header.item .content p {
+				color: <?php echo $font_header_color; ?>;
 			}
 		</style>
 
 		<style type="text/css">
-			.navbar a {
-				color: <?php echo $font_color_header; ?>;
+			.ui.menu a.item {
+				color: <?php echo $font_navbar_color; ?>;
 			}
 		</style>
 
 		<style type="text/css">
-			.navbar li {
-				color: <?php echo $font_color_header;?> !important;
-			}
-		</style>
-	<?php
-	endif;
-
-	// execute changes in link color in footer	
-	if ( $font_link_color_footer != '#1C98E3' ) :
-	?>
-		<style type="text/css">			
-			.tautan .item a:hover{
-				color: <?php echo $font_link_color_footer; ?>;
+			.ui.menu a.item:hover {
+				color: <?php echo $font_navbar_link_color;?> !important;
 			}
 		</style>
 	<?php
