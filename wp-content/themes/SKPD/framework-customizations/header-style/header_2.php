@@ -1,4 +1,4 @@
-<div class="main-menu">
+<div class="main-menu type-2">
     <div class="ui grid container">
       <div class="column">
         <div class="ui secondary menu page-nav">
@@ -12,7 +12,20 @@
             </div>
           </div>
           <div class="right menu">
-            
+            <?php 
+              wp_nav_menu(array(
+                'menu'              => 'primary',
+                'theme_location'    => 'primary',
+                'depth'             => 3,
+                'container'         => '',
+                'container_id'      => '',
+                'container_class'   => '',
+                'menu_class'        => '',
+                'fallback_cb'       => '',
+                'items_wrap'        => '%3$s',
+                'walker'            => new walkah()
+              ));
+            ?>
             <form action="<?php echo home_url( '/' ); ?>">
               <div class="item search-ui">
                 <div class="ui fluid search">
@@ -29,24 +42,6 @@
       </div>
     </div>
   </div>
-<!--   <div class="ui menu menu-bar">
-    <div class="ui container">
-      <?php 
-              wp_nav_menu(array(
-                'menu'              => 'primary',
-                'theme_location'    => 'primary',
-                'depth'             => 3,
-                'container'         => '',
-                'container_id'      => '',
-                'container_class'   => '',
-                'menu_class'        => '',
-                'fallback_cb'       => '',
-                'items_wrap'        => '%3$s',
-                'walker'            => new walkah()
-              ));
-            ?>
-    </div>
-  </div> -->
           
   <div class="ui vertical left sidebar styled accordion menu">
     <?php 

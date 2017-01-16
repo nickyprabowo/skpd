@@ -1,4 +1,4 @@
-<div class="main-menu">
+<div class="main-menu type-1">
     <div class="ui grid container">
       <div class="column">
         <div class="ui secondary menu page-nav">

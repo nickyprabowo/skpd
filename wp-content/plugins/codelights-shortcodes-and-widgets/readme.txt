@@ -3,7 +3,7 @@ Contributors: rsukhar
 Tags: shortcodes, shortcode, widget, widgets, responsive, page, admin, banner, counter, flipbox, animation, sidebar, siteorigin
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -138,6 +138,13 @@ Back-end (editor): Edge, two latest versions of Chrome, Safari, FireFox and Oper
 5. Editing sidebar widget from customizer
 
 == Changelog ==
+= 1.1.4 =
+* Improved: CodeLights now works in SiteOrigin Layout Builder Widget too
+* Improved: Now you can use nbsp chars in Interactive Text
+* Updated: Font Awesome to the latest 4.7.0 version
+* Fixed: Interactive Text now doesn't trim some spaces between words
+* Fixed: Compatibility of Modal Popups with SiteOrigin Vantage theme's menu z-index
+
 = 1.1.3 =
 * Improved: Interactive Banner now shows attachment alt, when it's defined (which is good for SEO)
 * Fixed: Compatibility with some 3-rd party plugins that change hooks order.
